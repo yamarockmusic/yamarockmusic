@@ -1,0 +1,127 @@
+@charset "utf-8";
+
+
+/*-------------------------------------------------------------------------
+#biography
+---------------------------------------------------------------------------*/
+#biography{
+	margin: 20px 10px 10px 0px;											/*余白外*/
+} 
+
+#biography img{
+	float: left;														/*フロート*/
+	width: 30%;															/*幅*/
+	height: auto;														/*高さ*/
+	margin: 0px 20px 0px 0px;											/*余白外*/	
+}
+
+
+
+/*-------------------------------------------------------------------------
+sortbutton
+---------------------------------------------------------------------------*/
+.sort{
+	display: inline-block;												/*インラインブロック要素*/
+	padding: 1px 2px;													/*余白内*/
+	cursor: pointer;													/*マウスポインター*/
+	overflow: visible;													/*はみ出し処理*/
+	text-decoration: none;												/*テキスト装飾*/
+	white-space: nowrap;												
+	background: #eeeeee;												/*背景色*/
+	border: 1px solid #000000;											/*枠線*/
+	-moz-box-shadow: 1px 1px 1px rgba(000,000,000,0.3);					/*影*/
+	-webkit-box-shadow: 1px 1px 1px rgba(000,000,000,0.3);				/*同上*/
+	width: 60px;														/*幅*/
+	padding: 2px 0;														/*余白内*/
+}
+
+.sort:disabled{															/*無効時*/
+	background: #a9a9a9;												/*背景色*/
+	-moz-box-shadow: inset 1px 1px 3px rgba(000,000,000,0.3);			/*影*/
+	-webkit-box-shadow: inset 1px 1px 3px rgba(000,000,000,0.3);		/*同上*/
+	color: #ffffff;														/*フォント*/
+}
+
+
+
+/*-------------------------------------------------------------------------
+smallbox
+---------------------------------------------------------------------------*/
+.smallbox li a{
+	clear: both !important;												/*回り込み解除*/
+	width: 700px;														/*幅*/
+	height: 87px;														/*高さ*/
+	margin: 0px 10px 0px 0px !important;								/*余白外*/	
+	padding: 10px 0px 0px 10px !important;								/*余白内*/	
+	border-top: none !important;										/*枠線*/
+	border-right: none !important;										/*枠線*/
+	border-left: none !important;										/*枠線*/
+	border-bottom: 1px solid #dcdcdc !important;						/*枠線*/
+	background-image: url(../images/arrow_001.png);						/*背景画像*/
+	background-repeat: no-repeat;										/*リピート*/
+	background-position : right 7px bottom 13px;							/*位置*/
+}
+
+.smallbox li img{
+	float: left !important;												/*フロート*/
+	width: 75px;														/*幅*/
+	height: 75px;														/*縦*/
+	margin-bottom: 0px;													/*余白外*/
+}
+
+.smallbox li:last-child {
+	margin-bottom:	20px;												/*余白外*/	
+}
+
+
+
+/*-------------------------------------------------------------------------
+sets
+---------------------------------------------------------------------------*/
+.sets {
+	clear: both;											/*回り込み解除*/
+	padding: 10px 0px 10px 10px;							/*余白*/
+	margin: 20px 10px 0px 0px;								/*余白*/
+	border: 1px solid #dcdcdc;								/*枠線*/
+	width: auto;											/*幅*/
+	height: 290px;											/*高さ*/
+}
+
+.sets .seth {
+	display: inline-block;										/*インラインブロック要素*/
+	margin-bottom: 10px;										/*余白外*/	
+	padding: 0px 5px;											/*余白内*/	
+	border: 1px solid #dc143c;									/*枠線*/
+	font-weight: bold;											/*太字*/
+	color: #dc143c;												/*フォント*/
+	line-height:20px;											/*行間*/
+}
+
+.sets .setp {
+	margin-left: 10px;											/*余白外*/	
+	font-weight: bold;											/*太字*/
+}
+
+.sets .m10 {
+	line-height:20px;													/*行間*/
+	margin: 0px 10px 0px 160px;											/*余白外*/	
+}
+
+
+
+/*-------------------------------------------------------------------------
+▼▼テスト専用▼▼
+---------------------------------------------------------------------------*/
+
+/*******************************************************
+ターゲットliの上に文字を入れることには成功したが
+アンカーリンクを使って飛んでくるとソートが効かなくなる
+固定ヘッダ分のズレもうまく対処できていない
+いったん保留
+
+:target::before {
+  content: "kkkkkkkkk";
+}
+*******************************************************/
+
+
