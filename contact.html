@@ -1,106 +1,73 @@
-﻿<!doctype html>
-	<!-- Facebook OGP -->
-	<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja" dir="ltr" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
-
+﻿<!DOCTYPE html>
+<html lang="ja">
 	<head>
 		<meta charset="utf-8">
-
-		<!-- キャッシュ -->
-		<meta http-equiv="Expires" content="86400">
-
-		<!-- タイトル / キーワード -->
+	
 		<title>yamarockmusic バンドスコア｜TAB譜｜楽譜 販売</title>
-		<meta name="viewport" content="width=device-width">
-		<meta name="copyright" content="yamarockmusic">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> <meta name="copyright" content="yamarockmusic">
 		<meta name="description" content="yamarockmusic バンドスコア｜TAB譜｜楽譜 販売">
 		<meta name="keywords" content="ギター,TAB,スコア,初心者">
-
-		<!-- ファビコン -->
-		<link rel="shortcut icon" href="./favicon.ico">
-
-		<!-- ウェブクリップアイコン -->
-		<link rel="apple-touch-icon-precomposed" href="./images/webclip.png" />
-
-		<!-- OGP -->
-		<meta property="og:locale" content="ja_JP">
-		<meta property="og:title" content="yamarockmusic [ヤマロック ミュージック]" />
+	
+		<link rel="icon" href="./favicon.ico"> <link rel="apple-touch-icon" href="./images/webclip.png"> <meta property="og:locale" content="ja_JP">
+		<meta property="og:title" content="yamarockmusic [ヤマロック ミュージック]">
 		<meta property="og:type" content="article">
-		<meta property="og:description" content="1曲から購入できる楽譜配信サイト" />
-		<meta property="og:url" content="https://yamarockmusic.github.io/yamarockmusic/" />
-		<meta property="og:image" content="https://yamarockmusic.github.io/yamarockmusic/images/ogp01.jpg" />
+		<meta property="og:description" content="1曲から購入できる楽譜配信サイト">
+		<meta property="og:url" content="https://yamarockmusic.github.io/yamarockmusic/">
+		<meta property="og:image" content="https://yamarockmusic.github.io/yamarockmusic/images/ogp01.jpg">
 		
-		<!-- twitter OGP -->
-		<meta name="twitter:card" content="summary" />
-		<meta name="twitter:site" content="@yamarockmusic" />
-		
-		<!-- Facebook専用OGP -->
-		<meta property="fb:admins" content="388404441309637">
-
-		<!-- CSS -->
+		<meta name="twitter:card" content="summary"> <meta name="twitter:site" content="@yamarockmusic">
+	
 		<link rel="stylesheet" href="./css/style.min.css">
-		<link href="./css/style-s.min.css" rel="stylesheet" type="text/css" media="only screen and (max-width:731px)">
-
-		<!-- jQuery -->
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-
-		<!-- layzr JS *jsフォルダに本体も入っている とりあえずcdnjsから読込 ver2.xx系はうまく動作しない 原因不明 -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/layzr.js/1.4.3/layzr.min.js"></script>
-
-		<!-- Smooth Scroll JS -->
-		<script type="text/javascript" src="./js/smoothscroll.js"></script>
-
-		<!-- loadlist JS -->
-		<script type="text/javascript">
-		<!--
+		<link href="./css/style-s.min.css" rel="stylesheet" media="only screen and (max-width:731px)"><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	
+		<script src="./js/smoothscroll.js"></script>
+	
+		<script src="./js/pagetop.js"></script>
+	
+		<script>
 			$(function(){
 				$('#loadlist').load('./artist.html #artlist');
-			}); 
-		-->
+			});
 		</script>
-		<!-- //loadlist JS -->
-
-		<!-- pagetop JS -->
-		<script type="text/javascript" src="./js/pagetop.js"></script>
-
-		<!-- ▼試験運用中 スマホ対策 シングルタップレスポンス -->
-		<!-- 参考 http://www.rainorshine.asia/2011/09/01/post2127.html -->
-		<script src="./js/jquery.tap-1.0.3.js"></script>
-
-		<!-- ▼試験運用中 google analytics -->
-		<meta http-equiv="Content-Script-Type" content="text/javascript">
-		
 	</head>
 
-	<!-- body -->
 	<body>
 
-		<!-- container -->
 		<div id="container">
 
-			<!-- header -->
-			<div id ="header">
+			<header id="header">
 				<h1>バンドスコア｜TAB譜｜楽譜 ダウンロード配信サイト</h1>
-				<div id="logo"><a href="./index.html#"><img src="./images/logo_600x245.png" width="122" height="50" alt=""></a></div>
-				<!-- nav -->
+				
+				<div id="logo">
+					<a href="./index.html">
+						<img src="./images/logo_600x245.png" width="122" height="50" alt="yamarockmusic ロゴ">
+					</a>
+				</div>
+				
 				<nav id="menu-box">
 					<ul>
-						<li class=""><a href="./index.html">TOP</a></li>
-						<li class=""><a href="./artist.html">楽譜一覧</a></li>
-						<li class=""><a href="./faq.html">FAQ</a></li>
-						<li id="current"><a href="#">Contact</a></li>
-					</ul>
+						<li><a href="./index.html">TOP</a></li>
+						<li><a href="./artist.html">楽譜一覧</a></li>
+						<li><a href="./faq.html">FAQ</a></li>
+						<li id="current"><a href="#">Contact</a></li></ul>
 				</nav>
-			</div>
-			<!--// header -->
-
-			<!-- syncer-brcb -->
+			</header>
 			<ul id="syncer-brcb">
-				<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="./index.html" itemprop="url"><span itemprop="title">TOP</span></a></li>
-				<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="#" itemprop="url"><span itemprop="title">Contact</span></a></li>
+				<li itemscope itemtype="https://schema.org/ListItem">
+					<a href="./index.html" itemprop="item">
+						<span itemprop="name">TOP</span>
+					</a>
+					<meta itemprop="position" content="1">
+				</li>
+				<li itemscope itemtype="https://schema.org/ListItem">
+					<a href="#" itemprop="item">
+						<span itemprop="name">Contact</span>
+					</a>
+					<meta itemprop="position" content="2">
+				</li>
 			</ul>
 
-			<!-- main -->
-			<div id="main">
+			<main id="main">
 
 				<h2><img src="./images/1467097393_logout.png" alt=""> Contact</h2>
 
@@ -108,90 +75,51 @@
 				<p>お問い合わせの返信には多少お時間を頂戴する場合がございます。</p>
 				<p>また、内容によっては頂いたお問い合わせ全てにお返事を差し上げられない場合もございます。</p>
 				<br>
-				<div align="center"><< クリックでお問い合わせフォームが開きます >></div>
+				<div style="text-align: center;"><&lt; クリックでお問い合わせフォームが開きます &gt;&gt;</div>
 
-				<!-- フォームズのメールフォーム[https://www.formzu.com/] -->
-				<div align="center">
-					<a href="https://ws.formzu.net/fgen/S88014643/" style="display:block; text-align:center; width:150px; height:35px; background: url(./images/btn_01.png); no-repeat; text-decoration: none" target="_blank">
-						<font color="#FFFFFF"><span style="vertical-align:-4px;"><b>お問い合わせ</b></span></font>
+				<div style="text-align: center; margin-top: 15px;">
+					<a href="https://ws.formzu.net/fgen/S88014643/" style="display:inline-block; text-align:center; width:150px; height:35px; background: url(./images/btn_01.png) no-repeat; text-decoration: none; line-height: 35px;" target="_blank" rel="noopener noreferrer">
+						<span style="color: #FFFFFF; font-weight: bold; vertical-align: middle;">お問い合わせ</span>
 					</a>
 				</div>
 
-			</div>
-			<!-- //main -->
+			</main>
+			<aside id="side">
 
-			<!-- side -->
-			<div id="side">
+				<h2><img src="./images/art_001.png" alt=\"アーティストアイコン\"> アーティスト一覧</h2>
 
-				<h2><img src="./images/art_001.png" alt=""> アーティスト一覧</h2>
-
-				<!-- artistlist -->
 				<div id="artistlist">
 					<ul>
-						<div id="loadlist">
-							<a href="./artist.html">アーティスト一覧の読み込みに失敗しました。<br>
+						<li id="loadlist">
+							<a href="./artist.html">
+								アーティスト一覧の読み込みに失敗しました。<br>
 								JavaScriptが使用できるようブラウザ設定を変更してリロード(再読み込み)してください。<br>
 								または、この文字をクリックしてアーティスト一覧ページへジャンプすることもできます。
 							</a>
-						</div>
+						</li>
 					</ul>
 				</div>
 
-			</div>
-			<!-- //side -->
+			</aside>
+			<p id="pagetop"><a href="#">TOP ▲</a></p>
 
-			<!-- pagetop -->
-			<p id="pagetop"><a href="#wrap">TOP ▲</a></p>
-			<!-- //pagetop -->
-
-			<!-- footer -->
 			<footer>
-				<small>Copyright&copy; 2015　<a href="./index.html"><b>yamarock music</b></a>　All Rights Reserved.</small>
+				<small>Copyright &copy; 2015-2026 <a href="./index.html"><b>yamarock music</b></a> All Rights Reserved.</small>
 			</footer>
-			<!-- //footer -->
 			
 		</div>
-		<!-- //container -->
-
-<!-- ******************************************* -->
-
-		<!-- IMGリンク切れ対策 JS -->
-		<script type="text/javascript">
-		<!-- 
+		<script>
 			$(function () {
-				$('img').error(function(){
-					$(this).attr({src:'./images/noimg_001.jpg',alt:'No Image'});
+				$('img').on('error', function(){
+					$(this).attr({
+						src: './images/noimg_001.jpg',
+						alt: 'No Image'
+					});
 				});
 			});
-		 //-->
 		</script>
-		<!-- //IMGリンク切れ対策 JS -->
-
-		<!-- layzr JS -->
-		<script type="text/javascript">var layzr = new Layzr();</script>
-
-		<!-- java noscript -->
 		<noscript>
 			<p>全てのコンテンツをご覧いただくには、JavaScriptが使用できるようブラウザ設定を変更してください</p>
 		</noscript>
-		<!-- //java noscript -->
-
-		<!-- google analytics ▼試験運用中▼ -->
-		<script>
-		<!--
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-		ga('create', 'UA-57858395-1', 'auto');
-		ga('send', 'pageview');
-		-->
-		</script>
-		<!-- google analytics ▲試験運用中▲ -->
-
-	</body>
-	<!-- //body -->
-
+		</body>
 </html>
-<!-- //html -->
