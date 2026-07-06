@@ -1,240 +1,320 @@
-<!DOCTYPE html>
-<html lang="ja">
+﻿<!doctype html>
+	<!-- Facebook OGP -->
+	<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja" dir="ltr" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+
 	<head>
 		<meta charset="utf-8">
-	
-		<title>yamarockmusic バンドスコア｜TAB譜｜楽譜 販売</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"> <meta name="copyright" content="yamarockmusic">
-		<meta name="description" content="yamarockmusic バンドスコア｜TAB譜｜楽譜 販売">
-		<meta name="keywords" content="ギター,TAB,スコア,初心者">
-	
-		<link rel="icon" href="./favicon.ico"> <link rel="apple-touch-icon" href="./images/webclip.png"> <meta property="og:locale" content="ja_JP">
-		<meta property="og:title" content="yamarockmusic [ヤマロック ミュージック]">
-		<meta property="og:type" content="article">
-		<meta property="og:description" content="1曲から購入できる楽譜配信サイト">
-		<meta property="og:url" content="https://yamarockmusic.github.io/yamarockmusic/">
-		<meta property="og:image" content="https://yamarockmusic.github.io/yamarockmusic/images/ogp01.jpg">
-		
-		<meta name="twitter:card" content="summary"> <meta name="twitter:site" content="@yamarockmusic">
-	
-		<link rel="stylesheet" href="./css/style.min.css">
-		<link href="./css/style-s.min.css" rel="stylesheet" media="only screen and (max-width:731px)"><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-	
-		<script src="./js/smoothscroll.js"></script>
-		
-		<script>
-			function show(inputData) {
-				var objID = document.getElementById("layer_" + inputData);
-				var buttonID = document.getElementById("category_" + inputData);
-				if(objID.className == 'close') {
-					objID.style.display = 'block';
-					objID.className = 'open';
-				} else {
-					objID.style.display = 'none';
-					objID.className = 'close';
-				}
-			}
-		</script>
 
-		<script src="./js/pagetop.js"></script>
-	
-		<script>
+		<!-- キャッシュ -->
+		<meta http-equiv="Expires" content="86400">
+
+		<!-- タイトル / キーワード -->
+		<title>yamarockmusic バンドスコア｜TAB譜｜楽譜 よくある質問 FAQ</title>
+		<meta name="viewport" content="width=device-width">
+		<meta name="copyright" content="yamarockmusic">
+		<meta name="description" content="yamarockmusic バンドスコア｜TAB譜｜楽譜 よくある質問 FAQ">
+		<meta name="keywords" content="ギター,TAB,無料,スコア,初心者">
+
+		<!-- ファビコン -->
+		<link rel="shortcut icon" href="./favicon.ico">
+
+		<!-- ウェブクリップアイコン -->
+		<link rel="apple-touch-icon-precomposed" href="./images/webclip.png" />
+
+		<!-- OGP -->
+		<meta property="og:locale" content="ja_JP">
+		<meta property="og:title" content="yamarockmusic [ヤマロック ミュージック]" />
+		<meta property="og:type" content="article">
+		<meta property="og:description" content="1曲から購入できる楽譜配信サイト" />
+		<meta property="og:url" content="https://yamarockmusic.github.io/yamarockmusic/" />
+		<meta property="og:image" content="https://yamarockmusic.github.io/yamarockmusic/images/ogp01.jpg" />
+
+		<!-- twitter OGP -->
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="@yamarockmusic" />
+
+		<!-- Facebook専用OGP -->
+		<meta property="fb:admins" content="388404441309637">
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="./css/style.min.css">
+		<link href="./css/style-s.min.css" rel="stylesheet" type="text/css" media="only screen and (max-width:731px)">
+
+		<!-- jQuery -->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+		<!-- layzr JS *jsフォルダに本体も入っている とりあえずcdnjsから読込 ver2.xx系はうまく動作しない 原因不明 -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/layzr.js/1.4.3/layzr.min.js"></script>
+
+		<!-- Smooth Scroll JS -->
+		<script type="text/javascript" src="./js/smoothscroll.js"></script>
+
+		<!-- loadlist JS -->
+		<script type="text/javascript">
+		<!--
 			$(function(){
 				$('#loadlist').load('./artist.html #artlist');
-			});
+			}); 
+		-->
 		</script>
+		<!-- //loadlist JS -->
+		
+		<!-- FAQ専用 折りたたみ JS -->
+		<script language=javascript>
+		<!--
+			function show(inputData) {
+				var objID=document.getElementById( "layer_" + inputData );
+				var buttonID=document.getElementById( "category_" + inputData );
+				if(objID.className=='close') {
+					objID.style.display='block';
+					objID.className='open';
+					}else{
+					objID.style.display='none';
+					objID.className='close';
+				}
+			}
+		//-->
+		</script>
+
+		<!-- pagetop JS -->
+		<script type="text/javascript" src="./js/pagetop.js"></script>
+
+		<!-- ▼試験運用中 スマホ対策 シングルタップレスポンス -->
+		<!-- 参考 http://www.rainorshine.asia/2011/09/01/post2127.html -->
+		<script src="./js/jquery.tap-1.0.3.js"></script>
+
+		<!-- ▼試験運用中 google analytics -->
+		<meta http-equiv="Content-Script-Type" content="text/javascript">
+		
 	</head>
 
+	<!-- body -->
 	<body>
 
+		<!-- container -->
 		<div id="container">
 
-			<header id="header">
+			<!-- header -->
+			<div id ="header">
 				<h1>バンドスコア｜TAB譜｜楽譜 ダウンロード配信サイト</h1>
-				
-				<div id="logo">
-					<a href="./index.html">
-						<img src="./images/logo_600x245.png" width="122" height="50" alt="yamarockmusic ロゴ">
-					</a>
-				</div>
-				
+				<div id="logo"><a href="./index.html#"><img src="./images/logo_600x245.png" width="122" height="50" alt=""></a></div>
+				<!-- nav -->
 				<nav id="menu-box">
 					<ul>
-						<li><a href="./index.html">TOP</a></li>
-						<li><a href="./artist.html">楽譜一覧</a></li>
-						<li id="current"><a href="#">FAQ</a></li> <li><a href="./contact.html">Contact</a></li>
+						<li class=""><a href="./index.html">TOP</a></li>
+						<li class=""><a href="./artist.html">楽譜一覧</a></li>
+						<li id="current"><a href="#">FAQ</a></li>
+						<li class=""><a href="./contact.html">Contact</a></li>
 					</ul>
 				</nav>
-			</header>
+			</div>
+			<!--// header -->
+
+			<!-- syncer-brcb -->
 			<ul id="syncer-brcb">
-				<li itemscope itemtype="https://schema.org/ListItem">
-					<a href="./index.html" itemprop="item">
-						<span itemprop="name">TOP</span>
-					</a>
-					<meta itemprop="position" content="1">
-				</li>
-				<li itemscope itemtype="https://schema.org/ListItem">
-					<a href="#" itemprop="item">
-						<span itemprop="name">FAQ</span>
-					</a>
-					<meta itemprop="position" content="2">
-				</li>
+				<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="./index.html" itemprop="url"><span itemprop="title">TOP</span></a></li>
+				<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="#" itemprop="url"><span itemprop="title">FAQ</span></a></li>
 			</ul>
 
-			<main id="main">
+			<!-- main -->
+			<div id="main">
 
 				<h2><img src="./images/1467095562_speech_bubble.png" alt=""> よくある質問</h2>
 
-				<div class="faq">
-					<a href="javascript:void(0)" id="category_FAQ_01" onclick="show('FAQ_01');">
-						<p>【 ファイル形式は何ですか？</p>
-					</a>
-					<div id="layer_FAQ_01" style="display: none; position: relative; background-color: #dcdcdc; padding: 10px;" class="close">
-						<p>バンドスコア｜TAB譜｜楽譜は 全てPDF形式 です。</p>
-						<p>Adobe社 の Adobe Reader でご覧いただけます。</p>
-						<p>お持ちでない方は、下のリンクより無料でダウンロードできますのでご利用ください。</p>
-						<p><b>Adobe Reader</b></p>
-						<a href="https://get.adobe.com/jp/reader/" target="_blank" rel="noopener noreferrer">
-							<img src="images/adobe_icon.png" width="158" height="39" alt="Adobe Readerを入手">
+					<div class="faq">
+						<a href="javascript:void(0)" id="category_FAQ_01" onclick="show('FAQ_01');">
+							<p>【 ファイル形式は何ですか？</p>
 						</a>
+						<div id="layer_FAQ_01" style="display: none; position: relative; background-color: #dcdcdc; padding: 10px;" class="close">
+							<p>バンドスコア｜TAB譜｜楽譜は 全てPDF形式 です。</p>
+							<p>Adobe社 の Adobe Reader でご覧いただけます。</p>
+							<p>お持ちでない方は、下のリンクより無料でダウンロードできますのでご利用ください。</p>
+							<p><b>Adobe Reader</b></p>
+							<a href="https://get.adobe.com/jp/reader/" target="_blank">
+								<img src="images/adobe_icon.png"  width="158" height="39">
+							</a>
+						</div>
 					</div>
-				</div>
 
-				<div class="faq">
-					<a href="javascript:void(0)" id="category_FAQ_02" onclick="show('FAQ_02');">
-						<p>【 スマートフォンやiPad等でも見ることはできますか？</p>
-					</a>
-					<div id="layer_FAQ_02" style="display: none; position: relative; background-color: #dcdcdc; padding: 10px;" class="close">
-						<p>可能です。</p>
-						<p>利用環境として Adobe社 の Adobe Reader がインストールされている必要があります。</p>
-						<p>お持ちでない方は、下のリンクより無料でダウンロードできますのでご利用ください。</p>
-						<p><b>Adobe Reader</b></p>
-						<a href="https://get.adobe.com/jp/reader/" target="_blank" rel="noopener noreferrer">
-							<img src="images/adobe_icon.png" width="158" height="39" alt="Adobe Readerを入手">
+					<div class="faq">
+						<a href="javascript:void(0)" id="category_FAQ_02" onclick="show('FAQ_02');">
+							<p>【 スマートフォンやiPad等でも見ることはできますか？</p>
 						</a>
+						<div id="layer_FAQ_02" style="display: none; position: relative; background-color: #dcdcdc; padding: 10px;" class="close">
+							<p>可能です。</p>
+							<p>利用環境として Adobe社 の Adobe Reader がインストールされている必要があります。</p>
+							<p>お持ちでない方は、下のリンクより無料でダウンロードできますのでご利用ください。</p>
+							<p><b>Adobe Reader</b></p>
+							<a href="https://get.adobe.com/jp/reader/" target="_blank">
+								<img src="images/adobe_icon.png"  width="158" height="39">
+							</a>
+						</div>
 					</div>
-				</div>
 
-				<div class="faq">
-					<a href="javascript:void(0)" id="category_FAQ_03" onclick="show('FAQ_03');">
-						<p>【 印刷はできますか？</p>
-					</a>
-					<div id="layer_FAQ_03" style="display: none; position: relative; background-color: #dcdcdc; padding: 10px;" class="close">
-						<p>ご家庭のプリンタなどで印刷できます。</p>
-						<p>ただし、印刷物につきましては その用途を「私的使用のため」と限定されていることに ご注意ください。</p>
-						<p>例えば、印刷した楽譜をバンドメンバーに配布するなどの行為は「著作権法違反」となり、2年以下の懲役もしくは200万円以下の罰金対象となります。</p>
-						<p>このような場合は、メンバー各自が1部ずつ楽譜を購入する必要があります。</p>
-						<p>著作権につきましては <a href="https://www.cric.or.jp/index.html" target="_blank" rel="noopener noreferrer" style="color:#0000cd;">公益法人著作権情報センター</a> ホームページにてご確認ください。</p>
-					</div>
-				</div>
-
-				<div class="faq">
-					<a href="javascript:void(0)" id="category_FAQ_06" onclick="show('FAQ_06');">
-						<p>【 楽譜が正しく表示されません</p>
-					</a>
-					<div id="layer_FAQ_06" style="display: none; position: relative; background-color: #dcdcdc; padding: 10px;" class="close">
-						<p>簡易PDFビューワ等のソフトで、文字化けする現象が確認されております。</p>
-						<p>楽譜の閲覧には Adobe社 の Adobe Reader をご利用ください。</p>
-						<p>お持ちでない方は、下のリンクより無料でダウンロードできますのでご利用ください。</p>
-						<p><b>Adobe Reader</b></p>
-						<a href="https://get.adobe.com/jp/reader/" target="_blank" rel="noopener noreferrer">
-							<img src="images/adobe_icon.png" width="158" height="39" alt="Adobe Readerを入手">
+					<div class="faq">
+						<a href="javascript:void(0)" id="category_FAQ_03" onclick="show('FAQ_03');">
+							<p>【 印刷はできますか？</p>
 						</a>
+						<div id="layer_FAQ_03" style="display: none; position: relative; background-color: #dcdcdc; padding: 10px;" class="close">
+							<p>ご家庭のプリンタなどで印刷できます。</p>
+							<p>ただし、印刷物につきましては その用途を「私的使用のため」と限定されていることに ご注意ください。</p>
+							<p>例えば、印刷した楽譜をバンドメンバーに配布するなどの行為は「著作権法違反」となり、2年以下の懲役もしくは200万円以下の罰金対象となります。</p>
+							<p>このような場合は、メンバー各自が1部ずつ楽譜を購入する必要があります。</p>
+							<p>著作権につきましては <a href="https://www.cric.or.jp/index.html" target="_blank" style="color:#0000cd;">公益法人著作権情報センター</a> ホームページにてご確認ください。</p>
+						</div>
 					</div>
-				</div>
+
+					<div class="faq">
+						<a href="javascript:void(0)" id="category_FAQ_06" onclick="show('FAQ_06');">
+							<p>【 楽譜が正しく表示されません</p>
+						</a>
+						<div id="layer_FAQ_06" style="display: none; position: relative; background-color: #dcdcdc; padding: 10px;" class="close">
+							<p>簡易PDFビューワ等のソフトで、文字化けする現象が確認されております。</p>
+							<p>楽譜の閲覧には Adobe社 の Adobe Reader をご利用ください。</p>
+							<p>お持ちでない方は、下のリンクより無料でダウンロードできますのでご利用ください。</p>
+							<p><b>Adobe Reader</b></p>
+							<a href="https://get.adobe.com/jp/reader/" target="_blank">
+								<img src="images/adobe_icon.png"  width="158" height="39">
+							</a>
+						</div>
+					</div>
 
 				<br>
 				<h2><img src="./images/1467095562_speech_bubble.png" alt=""> 楽譜の購入・お支払方法について</h2>
 
-				<div class="faq">
-					<a href="javascript:void(0)" id="category_FAQ_07" onclick="show('FAQ_07');">
-						<p>【 購入方法を教えてください。</p>
-					</a>
-					<div id="layer_FAQ_07" style="display: none; position: relative; background-color: #dcdcdc; padding: 10px;" class="close">
-						<p>バンドスコア｜TAB譜｜楽譜 の販売は『Piascore楽譜ストア』様に委託しております。</p>
-						<p>購入方法は <a href="https://store.piascore.com/howto" target="_blank" rel="noopener noreferrer" style="color:#0000cd;">こちら</a> に詳しく記載されておりますので ご確認ください。</p>
+					<div class="faq">
+						<a href="javascript:void(0)" id="category_FAQ_07" onclick="show('FAQ_07');">
+							<p>【 購入方法を教えてください。</p>
+						</a>
+						<div id="layer_FAQ_07" style="display: none; position: relative; background-color: #dcdcdc; padding: 10px;" class="close">
+							<p>バンドスコア｜TAB譜｜楽譜 の販売は『Piascore楽譜ストア』様に委託しております。</p>
+							<p>購入方法は <a href="https://store.piascore.com/howto" target="_blank" style="color:#0000cd;">こちら</a> に詳しく記載されておりますので ご確認ください。</p>
+						</div>
 					</div>
-				</div>
 
-				<div class="faq">
-					<a href="javascript:void(0)" id="category_FAQ_11" onclick="show('FAQ_11');">
-						<p>【 上記のどれにも当てはまらない</p>
-					</a>
-					<div id="layer_FAQ_11" style="display: none; position: relative; background-color: #dcdcdc; padding: 10px;" class="close">
-						<p>『Piascore楽譜ストア』様のヘルプページもご確認ください。</p>
-						<p><a href="https://store.piascore.com/faq" target="_blank" rel="noopener noreferrer" style="color:#0000cd;">こちら</a> よりご覧いただけます。</p>
+					<div class="faq">
+						<a href="javascript:void(0)" id="category_FAQ_11" onclick="show('FAQ_11');">
+							<p>【 上記のどれにも当てはまらない</p>
+						</a>
+						<div id="layer_FAQ_11" style="display: none; position: relative; background-color: #dcdcdc; padding: 10px;" class="close">
+							<p>『Piascore楽譜ストア』様のヘルプページもご確認ください。</p>
+							<p><a href="https://store.piascore.com/faq" target="_blank" style="color:#0000cd;">こちら</a> よりご覧いただけます。</p>
+						</div>
 					</div>
-				</div>
 
+				<!-- SNS -->
 				<div id="sns">
 					<p><b>ページを共有</b></p>
-					
 					<a href="https://line.me/R/msg/text/?yamarockmusic%20https%3A%2F%2Fyamarockmusic.github.io%2Fyamarockmusic%2F" target="_blank" rel="noopener noreferrer">
 						<img src="./images/linebutton_20x20.png" alt="LINEで送る">
 					</a>
-					
 					<a href="https://x.com/intent/tweet?text=yamarockmusic%20-%20バンドスコア%20TAB譜%20楽譜サイト&url=https%3A%2F%2Fyamarockmusic.github.io%2Fyamarockmusic%2F" target="_blank" rel="noopener noreferrer">
 						<img src="./images/twitter_color_32px.png" alt="Xでシェア">
 					</a>
 				</div>
-				<div id="jasrac" class="jas">
+				<!-- //SNS -->
+				
+				<!-- JAS -->
+				<div id="jas">
 					<p><b>JASRAC許諾番号</b></p>
-					<img src="./images/jasrac-221058400b8360a7944e393747817f10.png" alt="JASRACロゴ">
-					
-					<div style="font-size: 11px; line-height: 1.6;">
-						9013196001Y37019<br>
-						9026286001Y38029<br>
-						9026286002Y37019
-					</div>
+					<img src="./images/jasrac-221058400b8360a7944e393747817f10.png" alt="">
+					<!-- <img src="./images/jasrac1.gif" alt=""> -->
+					<!-- <img src="./images/jasrac2.gif" alt=""> -->
+					<span style="font-size:11px;">9013196001Y37019<br></span>
+					<span style="font-size:11px;">9026286001Y38029<br></span>
+					<span style="font-size:11px;">9026286002Y37019<br></span>
 				</div>
 
-				<div id="nextone" class="jas">
+				<div id="jas">
 					<p><b>NexTone許諾番号</b></p>
-					<img src="./images/nextone-96984dd07b164ad8b950f9e129d3be3a.png" alt="NexToneロゴ">
-					
-					<div style="font-size: 11px; line-height: 1.6;">
-						ID000003241<br>
-						ID000005789<br>
-						ID000006472
-					</div>
+					<img src="./images/nextone-96984dd07b164ad8b950f9e129d3be3a.png" alt="">
+					<span style="font-size:11px;">ID000003241<br></span>
+					<span style="font-size:11px;">ID000005789<br></span>
+					<span style="font-size:11px;">ID000006472<br></span>
 				</div>
-				</main>
-			<aside id="side">
+				<!-- //JAS -->
 
-				<h2><img src="./images/art_001.png" alt="アーティストアイコン"> アーティスト一覧</h2>
+				<!-- amazon -->
+				<!-- <div class="amazon"> -->
+				<!-- 	<script type="text/javascript">amzn_assoc_ad_type ="responsive_search_widget"; amzn_assoc_tracking_id ="yamarock01-22"; amzn_assoc_marketplace ="amazon"; amzn_assoc_region ="JP"; amzn_assoc_placement =""; amzn_assoc_search_type = "search_widget";amzn_assoc_width ="auto"; amzn_assoc_height ="auto"; amzn_assoc_default_search_category =""; amzn_assoc_default_search_key ="";amzn_assoc_theme ="light"; amzn_assoc_bg_color ="FFFFFF"; </script><script src="//z-fe.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&Marketplace=JP"></script> -->
+				<!-- </div> -->
+				<!-- //amazon -->
 
+			</div>
+			<!-- //main -->
+
+			<!-- side -->
+			<div id="side">
+
+				<h2><img src="./images/art_001.png" alt=""> アーティスト一覧</h2>
+
+				<!-- artistlist -->
 				<div id="artistlist">
 					<ul>
-						<li id="loadlist">
-							<a href="./artist.html">
-								アーティスト一覧の読み込みに失敗しました。<br>
+						<div id="loadlist">
+							<a href="./artist.html">アーティスト一覧の読み込みに失敗しました。<br>
 								JavaScriptが使用できるようブラウザ設定を変更してリロード(再読み込み)してください。<br>
 								または、この文字をクリックしてアーティスト一覧ページへジャンプすることもできます。
 							</a>
-						</li>
+						</div>
 					</ul>
 				</div>
 
-			</aside>
-			<p id="pagetop"><a href="#">TOP ▲</a></p>
+			</div>
+			<!-- //side -->
 
+			<!-- pagetop -->
+			<p id="pagetop"><a href="#wrap">TOP ▲</a></p>
+			<!-- //pagetop -->
+
+			<!-- footer -->
 			<footer>
-				<small>Copyright &copy; 2015-2026 <a href="./index.html"><b>yamarock music</b></a> All Rights Reserved.</small>
+				<small>Copyright&copy; 2015　<a href="./index.html"><b>yamarock music</b></a>　All Rights Reserved.</small>
 			</footer>
+			<!-- //footer -->
 			
 		</div>
-		<script>
+		<!-- //container -->
+
+<!-- ******************************************* -->
+
+		<!-- IMGリンク切れ対策 JS -->
+		<script type="text/javascript">
+		<!-- 
 			$(function () {
-				$('img').on('error', function(){
-					$(this).attr({
-						src: './images/noimg_001.jpg',
-						alt: 'No Image'
-					});
+				$('img').error(function(){
+					$(this).attr({src:'./images/noimg_001.jpg',alt:'No Image'});
 				});
 			});
+		 //-->
 		</script>
+		<!-- //IMGリンク切れ対策 JS -->
+
+		<!-- layzr JS -->
+		<script type="text/javascript">var layzr = new Layzr();</script>
+
+		<!-- java noscript -->
 		<noscript>
 			<p>全てのコンテンツをご覧いただくには、JavaScriptが使用できるようブラウザ設定を変更してください</p>
 		</noscript>
-		</body>
+		<!-- //java noscript -->
+
+		<!-- google analytics ▼試験運用中▼ -->
+		<script>
+		<!--
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-57858395-1', 'auto');
+		ga('send', 'pageview');
+		-->
+		</script>
+		<!-- google analytics ▲試験運用中▲ -->
+
+	</body>
+	<!-- //body -->
+
 </html>
+<!-- //html -->
