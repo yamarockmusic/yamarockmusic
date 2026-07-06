@@ -1,808 +1,997 @@
-﻿<!doctype html>
-	<!-- Facebook OGP -->
-	<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja" dir="ltr" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
-
+<!DOCTYPE html>
+<html lang="ja">
 	<head>
 		<meta charset="utf-8">
-
-		<!-- キャッシュ -->
-		<meta http-equiv="Expires" content="86400">
-
-		<!-- タイトル / キーワード -->
+	
+		<!-- タイトル / キーワード設定 -->
 		<title>yamarockmusic バンドスコア｜TAB譜｜楽譜 販売</title>
-		<meta name="viewport" content="width=device-width">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- スマホ表示を綺麗にする設定 -->
 		<meta name="copyright" content="yamarockmusic">
 		<meta name="description" content="yamarockmusic バンドスコア｜TAB譜｜楽譜 販売">
 		<meta name="keywords" content="ギター,TAB,スコア,初心者">
-
-		<!-- ファビコン -->
-		<link rel="shortcut icon" href="./favicon.ico">
-
-		<!-- ウェブクリップアイコン -->
-		<link rel="apple-touch-icon-precomposed" href="./images/webclip.png" />
-
-		<!-- OGP -->
+	
+		<!-- お気に入りアイコン（ファビコン） -->
+		<link rel="icon" href="./favicon.ico"> <!-- ブラウザのタブに表示されるアイコン -->
+		<link rel="apple-touch-icon" href="./images/webclip.png"> <!-- スマホのホーム画面用のアイコン -->
+	
+		<!-- OGP（LINEやSNSでシェアされた時の設定） -->
 		<meta property="og:locale" content="ja_JP">
-		<meta property="og:title" content="yamarockmusic [ヤマロック ミュージック]" />
+		<meta property="og:title" content="yamarockmusic [ヤマロック ミュージック]">
 		<meta property="og:type" content="article">
-		<meta property="og:description" content="1曲から購入できる楽譜配信サイト" />
-		<meta property="og:url" content="https://yamarockmusic.github.io/yamarockmusic/" />
-		<meta property="og:image" content="https://yamarockmusic.github.io/yamarockmusic/images/ogp01.jpg" />
+		<meta property="og:description" content="1曲から購入できる楽譜配信サイト">
+		<meta property="og:url" content="https://yamarockmusic.github.io/yamarockmusic/">
+		<meta property="og:image" content="https://yamarockmusic.github.io/yamarockmusic/images/ogp01.jpg">
 		
-		<!-- twitter OGP -->
-		<meta name="twitter:card" content="summary" />
-		<meta name="twitter:site" content="@yamarockmusic" />
-		
-		<!-- Facebook専用OGP -->
-		<meta property="fb:admins" content="388404441309637">
-
-		<!-- CSS -->
+		<!-- Twitter・X専用のシェア設定 -->
+		<meta name="twitter:card" content="summary"> <!-- 小さな画像と文字のカード形式で表示 -->
+		<meta name="twitter:site" content="@yamarockmusic">
+	
+		<!-- CSS読み込み -->
 		<link rel="stylesheet" href="./css/style.min.css">
-		<link href="./css/style-s.min.css" rel="stylesheet" type="text/css" media="only screen and (max-width:731px)">
-
-		<!-- jQuery -->
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-
-		<!-- layzr JS *jsフォルダに本体も入っている とりあえずcdnjsから読込 ver2.xx系はうまく動作しない 原因不明 -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/layzr.js/1.4.3/layzr.min.js"></script>
-
-		<!-- Smooth Scroll JS -->
-		<script type="text/javascript" src="./js/smoothscroll.js"></script>
-
-		<!-- loadlist JS -->
-		<script type="text/javascript">
-		<!--
+		<link href="./css/style-s.min.css" rel="stylesheet" media="only screen and (max-width:731px)"><!-- スマホ対応(731px以下の場合に適用) -->
+	
+		<!-- jQuery読み込み -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	
+		<!-- Smooth Scroll JS（画面のスムーズスクロール） -->
+		<script src="./js/smoothscroll.js"></script>
+	
+		<!-- pagetop JS（トップへ戻るボタンの制御） -->
+		<script src="./js/pagetop.js"></script>
+	
+		<!-- loadlist JS（サイドバーのアーティスト一覧自動読み込み） -->
+		<script>
 			$(function(){
 				$('#loadlist').load('./artist.html #artlist');
-			}); 
-		-->
+			});
 		</script>
-		<!-- //loadlist JS -->
-
-		<!-- pagetop JS -->
-		<script type="text/javascript" src="./js/pagetop.js"></script>
-
-		<!-- ▼試験運用中 スマホ対策 シングルタップレスポンス -->
-		<!-- 参考 http://www.rainorshine.asia/2011/09/01/post2127.html -->
-		<script src="./js/jquery.tap-1.0.3.js"></script>
-
-		<!-- ▼試験運用中 google analytics -->
-		<meta http-equiv="Content-Script-Type" content="text/javascript">
-		
 	</head>
 
-	<!-- body -->
+	<!-- ==========================================
+		画面の表示エリア開始
+	========================================== -->
 	<body>
 
-		<!-- container -->
+		<!-- サイト全体を包む外枠の箱（全体の横幅や中央寄せをコントロール） -->
 		<div id="container">
 
-			<!-- header -->
-			<div id ="header">
+			<!-- ==========================================
+				ヘッダーエリア（サイトの看板・共通メニュー部分）
+			========================================== -->
+			<header id="header">
 				<h1>バンドスコア｜TAB譜｜楽譜 ダウンロード配信サイト</h1>
-				<div id="logo"><a href="./index.html#"><img src="./images/logo_600x245.png" width="122" height="50" alt=""></a></div>
-				<!-- nav -->
+				
+				<!-- サイトのロゴマーク（クリックするとトップページへ戻るリンク） -->
+				<div id="logo">
+					<a href="./index.html">
+						<img src="./images/logo_600x245.png" width="122" height="50" alt="yamarockmusic ロゴ">
+					</a>
+				</div>
+				
+				<!-- メインのナビゲーションメニュー -->
 				<nav id="menu-box">
 					<ul>
-						<li class=""><a href="./index.html">TOP</a></li>
-						<li id="current"><a href="#">楽譜一覧</a></li>
-						<li class=""><a href="./faq.html">FAQ</a></li>
-						<li class=""><a href="./contact.html">Contact</a></li>
+						<li><a href="./index.html">TOP</a></li>
+						<li id="current"><a href="#">楽譜一覧</a></li> <!-- 現在表示しているページ（楽譜一覧） -->
+						<li><a href="./faq.html">FAQ</a></li>
+						<li><a href="./contact.html">Contact</a></li>
 					</ul>
 				</nav>
-			</div>
-			<!--// header -->
+			</header>
+			<!--// ヘッダーエリア終了 -->
 
-			<!-- syncer-brcb -->
+			<!-- ==========================================
+				パンくずリスト（現在地を示すナビ）
+				※Googleの最新ルール（schema.org）に対応させています
+			========================================== -->
 			<ul id="syncer-brcb">
-				<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="./index.html" itemprop="url"><span itemprop="title">TOP</span></a></li>
-				<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="#" itemprop="url"><span itemprop="title">楽譜一覧</span></a></li>
+				<li itemscope itemtype="https://schema.org/ListItem">
+					<a href="./index.html" itemprop="item">
+						<span itemprop="name">TOP</span>
+					</a>
+					<meta itemprop="position" content="1">
+				</li>
+				<li itemscope itemtype="https://schema.org/ListItem">
+					<a href="#" itemprop="item">
+						<span itemprop="name">楽譜一覧</span>
+					</a>
+					<meta itemprop="position" content="2">
+				</li>
 			</ul>
 
-			<!-- main -->
-			<div id="main">
+			<!-- ==========================================
+				メインコンテンツエリア（楽譜の一覧リストが表示される主役の場所）
+			========================================== -->
+			<main id="main">
 
-				<h2><img src="./images/art_001.png" alt=""> 楽譜一覧</h2>
+				<!-- セクションの見出し（ヘッドフォンや音符などのアイコン画像 ＋ タイトル文字） -->
+				<h2><img src="./images/art_001.png" alt="楽譜アイコン"> 楽譜一覧</h2>
 
-				<!-- boxcontents -->
-				<div class="boxcontents">
-					<!-- middlebox -->
-					<ul class="middlebox">
-
-						<!-- artlist -->
-						<div id="artlist">
+				<!-- 楽譜リスト全体を包み込む一番大きな外枠の箱 	-->
+				<div id="artlist" class="boxcontents middlebox">
 							
-							<h3>あ</h3>
-								
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=2374" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/510Mr2oo2wL.jpg" alt="">
-										<span class="artist">藍井エイル</span>
-										<span class="amount">( 6 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
+					<!-- 「あ行」の見出し -->
+					<h3>あ</h3>
+					<ul class="score-list">
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=2374" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">藍井エイル</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">藍井エイル</span>
+								<span class="amount">( 6 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=18219" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">Ado</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">Ado</span>
+								<span class="amount">( 1 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=215" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">嵐</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">嵐</span>
+								<span class="amount">( 6 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=91" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">杏里</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">杏里</span>
+								<span class="amount">( 1 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=2375" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">UNLIMITS</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">UNLIMITS</span>
+								<span class="amount">( 2 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=89" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">安全地帯</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">安全地帯</span>
+								<span class="amount">( 2 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=7387" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">winnie</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">winnie</span>
+								<span class="amount">( 1 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=1995" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">X ( X-JAPAN )</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">X ( X-JAPAN )</span>
+								<span class="amount">( 2 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=2366" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">NGT48</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">NGT48</span>
+								<span class="amount">( 1 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=99	" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">岡村孝子</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">岡村孝子</span>
+								<span class="amount">( 1 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=2472" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">OxT</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">OxT</span>
+								<span class="amount">( 1 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=2367" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">男闘呼組</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">男闘呼組</span>
+								<span class="amount">( 7 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=15013" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">陰陽座</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">陰陽座</span>
+								<span class="amount">( 1 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+					</ul>
+					
+					<h3>か</h3>
+					<ul class="score-list">
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=2419" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">Ken Yokoyama</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">Ken Yokoyama</span>
+								<span class="amount">( 1 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+					</ul>
 
-								<li>
-								<a href="https://store.piascore.com/search?c=131&n=ado" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://m.media-amazon.com/images/I/61eem1+hH2L.jpg" alt="">
-										<span class="artist">Ado</span>
-										<span class="amount">( 1 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=215" target="_blank">
-										<img src="./images/loading.png" data-layzr="./images/noimg_001.jpg" alt="">
-										<span class="artist">嵐</span>
-										<span class="amount">( 6 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&n=杏里" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://m.media-amazon.com/images/I/81tEFh-4rQL.jpg" alt="">
-										<span class="artist">杏里</span>
-										<span class="amount">( 1 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=2375" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/71N4kpnqA%2BL.jpg" alt="">
-										<span class="artist">UNLIMITS</span>
-										<span class="amount">( 2 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=89" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/71M8bZsb%2BtL.jpg" alt="">
-										<span class="artist">安全地帯</span>
-										<span class="amount">( 2 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=7387" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://m.media-amazon.com/images/I/513MyPwuuHL._AC_.jpg" alt="">
-										<span class="artist">winnie</span>
-										<span class="amount">( 1 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=1995" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/51SrxYXChyL.jpg" alt="">
-										<span class="artist">X ( X-JAPAN )</span>
-										<span class="amount">( 2 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=2366" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/61OFA7XFzUL.jpg" alt="">
-										<span class="artist">NGT48</span>
-										<span class="amount">( 1 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=99" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/51%2B794pOKZL.jpg" alt="">
-										<span class="artist">岡村孝子</span>
-										<span class="amount">( 1 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=2472" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/71N6J2QKypL.jpg" alt="">
-										<span class="artist">OxT</span>
-										<span class="amount">( 1 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-								
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=2367" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/81aqjxZD%2BfL.jpg" alt="">
-										<span class="artist">男闘呼組</span>
-										<span class="amount">( 7 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=15013" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/61Pp9XLSy8L.jpg" alt="">
-										<span class="artist">陰陽座</span>
-										<span class="amount">( 1 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
+					<h3>さ</h3>
+					<ul class="score-list">
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=2597" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">桜高軽音部（けいおん！）</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">桜高軽音部（けいおん！）</span>
+								<span class="amount">( 1 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=26045" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">サバシスター</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">サバシスター</span>
+								<span class="amount">( 2 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=2594" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">ZIGGY</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">ZIGGY</span>
+								<span class="amount">( 15 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=2585" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">SIAM SHADE</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">SIAM SHADE</span>
+								<span class="amount">( 5 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=1257" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">JAM Project</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">JAM Project</span>
+								<span class="amount">( 5 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=2595" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">SHOW-YA</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">SHOW-YA</span>
+								<span class="amount">( 2 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=2363" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">Su凸ko D凹koi</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">Su凸ko D凹koi</span>
+								<span class="amount">( 1 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+					</ul>
+					
+					<h3>た</h3>
+					<ul class="score-list">
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=2596" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">DAITA</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">DAITA</span>
+								<span class="amount">( 2 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=247" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">玉置浩二</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">玉置浩二</span>
+								<span class="amount">( 1 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=2586" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">T-BOLAN</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">T-BOLAN</span>
+								<span class="amount">( 1 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=13969" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">TETORA</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">TETORA</span>
+								<span class="amount">( 2 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=1345" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">10-FEET</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">10-FEET</span>
+								<span class="amount">( 3 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=1993" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">DOES</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">DOES</span>
+								<span class="amount">( 3 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=2365" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">TOKIO</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">TOKIO</span>
+								<span class="amount">( 4 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+					</ul>
 							
-							<h3>か</h3>
+					<h3>な</h3>
+					<ul class="score-list">
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=2549" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">中島美嘉</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">中島美嘉</span>
+								<span class="amount">( 1 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=2546" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">中川翔子</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">中川翔子</span>
+								<span class="amount">( 3 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=997" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">中森明菜</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">中森明菜</span>
+								<span class="amount">( 10 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=21919" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">NEMOPHILA</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">NEMOPHILA</span>
+								<span class="amount">( 1 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+					</ul>
 							
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=2419" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/71zgD7C0f-L.jpg" alt="">
-										<span class="artist">Ken Yokoyama</span>
-										<span class="amount">( 1 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-							
-							<h3>さ</h3>
+					<h3>は</h3>
+					<ul class="score-list">
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=1956" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">Hi-STANDARD</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">Hi-STANDARD</span>
+								<span class="amount">( 7 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=1395" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">HYDE</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">HYDE</span>
+								<span class="amount">( 1 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=2118" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">浜田麻里</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">浜田麻里</span>
+								<span class="amount">( 2 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=14476" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">ハルカミライ</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">ハルカミライ</span>
+								<span class="amount">( 2 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=1394" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">HAWAIIAN6</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">HAWAIIAN6</span>
+								<span class="amount">( 6 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=2599" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">PERSONZ</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">PERSONZ</span>
+								<span class="amount">( 4 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=2364" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">Hump Back</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">Hump Back</span>
+								<span class="amount">( 11 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=2373" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">Hysteric Blue</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">Hysteric Blue</span>
+								<span class="amount">( 2 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=11190" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">BiSH</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">BiSH</span>
+								<span class="amount">( 5 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=2414" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">FOMARE</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">FOMARE</span>
+								<span class="amount">( 1 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=2376" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">04 Limited Sazabys</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">04 Limited Sazabys</span>
+								<span class="amount">( 2 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=996" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">PRINCESS PRINCESS</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">PRINCESS PRINCESS</span>
+								<span class="amount">( 4 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=21184" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">HEY-SMITH</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">HEY-SMITH</span>
+								<span class="amount">( 3 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=2415" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">Hey! Say! JUMP</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">Hey! Say! JUMP</span>
+								<span class="amount">( 2 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=2232" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">the peggies</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">the peggies</span>
+								<span class="amount">( 9 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=2372" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">Body</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">Body</span>
+								<span class="amount">( 1 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+					</ul>
 
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=2597" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/71zaG7LthOL.jpg" alt="">
-										<span class="artist">桜高軽音部（けいおん！）</span>
-										<span class="amount">( 1 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-								
-								<li>
-									<a href="https://store.piascore.com/search?c=131&n=%E3%82%B5%E3%83%90%E3%82%B7%E3%82%B9%E3%82%BF%E3%83%BC" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://m.media-amazon.com/images/I/61-1oHw2+QL._AC_SL1126_.jpg" alt="">
-										<span class="artist">サバシスター</span>
-										<span class="amount">( 2 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-								
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=2594" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/41M9R4ANH2L.jpg" alt="">
-										<span class="artist">ZIGGY</span>
-										<span class="amount">( 15 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-								
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=2585" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/51U51HshinL.jpg" alt="">
-										<span class="artist">SIAM SHADE</span>
-										<span class="amount">( 5 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-								
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=1257" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/61o2htbVGOL.jpg" alt="">
-										<span class="artist">JAM Project</span>
-										<span class="amount">( 5 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-								
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=2595" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/41119CJEX6L.jpg" alt="">
-										<span class="artist">SHOW-YA</span>
-										<span class="amount">( 2 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
+					<h3>ま</h3>
+					<ul class="score-list">
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=1783" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">水樹奈々</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">水樹奈々</span>
+								<span class="amount">( 1 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=725" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">MONGOL800</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">MONGOL800</span>
+								<span class="amount">( 14 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+					</ul>
+					
+					<h3>や</h3>
+					<ul class="score-list">
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=140" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">山下達郎</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">山下達郎</span>
+								<span class="amount">( 1 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=2371" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">yonige</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">yonige</span>
+								<span class="amount">( 9 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=23555" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">yutori</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">yutori</span>
+								<span class="amount">( 3 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+					</ul>
 
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=2363" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/91wocQNkA6L.jpg" alt="">
-										<span class="artist">Su凸ko D凹koi</span>
-										<span class="amount">( 1 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
+					<h3>ら</h3>
+					<ul class="score-list">
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=3127" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">LOVEBITES</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">LOVEBITES</span>
+								<span class="amount">( 1 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=2369" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">LiSA</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">LiSA</span>
+								<span class="amount">( 22 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=3329" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">リーガルリリー</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">リーガルリリー</span>
+								<span class="amount">( 1 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=1533" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">ロードオブメジャー</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">ロードオブメジャー</span>
+								<span class="amount">( 7 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=7391" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">WRONG SCALE</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">WRONG SCALE</span>
+								<span class="amount">( 1 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=16011" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">LONGMAN</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">LONGMAN</span>
+								<span class="amount">( 1 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+					</ul>
 
-							
-							<h3>た</h3>
-							
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=2596" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/71u7Nf5WnRL.jpg" alt="">
-										<span class="artist">DAITA</span>
-										<span class="amount">( 2 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-							
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=247" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/71M8bZsb%2BtL.jpg" alt="">
-										<span class="artist">玉置浩二</span>
-										<span class="amount">( 1 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=2586" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/519%2BEZuUsEL.jpg" alt="">
-										<span class="artist">T-BOLAN</span>
-										<span class="amount">( 1 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=13969" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/81gFDQOrffL.jpg" alt="">
-										<span class="artist">TETORA</span>
-										<span class="amount">( 2 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=1345" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/71VSASyQOXL.jpg" alt="">
-										<span class="artist">10-FEET</span>
-										<span class="amount">( 3 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=1993" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/51Dj47dcthL.jpg" alt="">
-										<span class="artist">DOES</span>
-										<span class="amount">( 3 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-								
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=2365" target="_blank">
-										<img src="./images/loading.png" data-layzr="./images/noimg_001.jpg" alt="">
-										<span class="artist">TOKIO</span>
-										<span class="amount">( 4 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-							
-							<h3>な</h3>
-							
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=2549" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/51R-Bd4V4rL.jpg" alt="">
-										<span class="artist">中島美嘉</span>
-										<span class="amount">( 1 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-								
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=2546" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/51ckwvRwmlL.jpg" alt="">
-										<span class="artist">中川翔子</span>
-										<span class="amount">( 3 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-								
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=997" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/41U-Oy3TMFL.jpg" alt="">
-										<span class="artist">中森明菜</span>
-										<span class="amount">( 10 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=21919" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://m.media-amazon.com/images/I/91mrPBDAk1S.jpg" alt="">
-										<span class="artist">NEMOPHILA</span>
-										<span class="amount">( 1 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-							
-							<h3>は</h3>
-							
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=1956" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/51D4JC8CV5L.jpg" alt="">
-										<span class="artist">Hi-STANDARD</span>
-										<span class="amount">( 7 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-								
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=1395" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/31eWGurL3KL.jpg" alt="">
-										<span class="artist">HYDE</span>
-										<span class="amount">( 1 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-								
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=2118" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/61GYYH2nq-L.jpg" alt="">
-										<span class="artist">浜田麻里</span>
-										<span class="amount">( 2 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=14476" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/711F3n-6CCL.jpg" alt="">
-										<span class="artist">ハルカミライ</span>
-										<span class="amount">( 2 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=1394" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/81tfN7UQ5VL.jpg" alt="">
-										<span class="artist">HAWAIIAN6</span>
-										<span class="amount">( 6 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=2599" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/51tTsPTQVvL.jpg" alt="">
-										<span class="artist">PERSONZ</span>
-										<span class="amount">( 4 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=2364" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/81tCdAK2VtL.jpg" alt="">
-										<span class="artist">Hump Back</span>
-										<span class="amount">( 11 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=2373" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/41zpmVCxm-L.jpg" alt="">
-										<span class="artist">Hysteric Blue</span>
-										<span class="amount">( 2 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=11190" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/81mQ0PWXhcL.jpg" alt="">
-										<span class="artist">BiSH</span>
-										<span class="amount">( 5 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=2414" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/81qhhmctyfL.jpg" alt="">
-										<span class="artist">FOMARE</span>
-										<span class="amount">( 1 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=2376" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/81U-oZcJaRL.jpg" alt="">
-										<span class="artist">04 Limited Sazabys</span>
-										<span class="amount">( 2 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=996" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/51QHvuxbPrL.jpg" alt="">
-										<span class="artist">PRINCESS PRINCESS</span>
-										<span class="amount">( 4 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=21184" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://m.media-amazon.com/images/W/MEDIAX_849526-T2/images/I/71cecTE8aEL.jpg" alt="">
-										<span class="artist">HEY-SMITH</span>
-										<span class="amount">( 3 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=2415" target="_blank">
-										<img src="./images/loading.png" data-layzr="./images/noimg_001.jpg" alt="">
-										<span class="artist">Hey! Say! JUMP</span>
-										<span class="amount">( 2 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=2232" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/81gv9oFvkDL.jpg" alt="">
-										<span class="artist">the peggies</span>
-										<span class="amount">( 9 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=2372" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/51TvQgp18mL.jpg" alt="">
-										<span class="artist">Body</span>
-										<span class="amount">( 1 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-							<h3>ま</h3>
-							
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=1783" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/51xy5w9wdiL.jpg" alt="">
-										<span class="artist">水樹奈々</span>
-										<span class="amount">( 1 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-				
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=725" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/518JHBGBZBL.jpg" alt="">
-										<span class="artist">MONGOL800</span>
-										<span class="amount">( 14 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-							
-							<h3>や</h3>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=140" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://m.media-amazon.com/images/I/516SfN46jqL.jpg" alt="">
-										<span class="artist">山下達郎</span>
-										<span class="amount">( 1 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=2371" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/71g5bC3lDcL.jpg" alt="">
-										<span class="artist">yonige</span>
-										<span class="amount">( 9 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-								
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=23555" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://m.media-amazon.com/images/I/612tNtbLLoL.jpg" alt="">
-										<span class="artist">yutori</span>
-										<span class="amount">( 3 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-							<h3>ら</h3>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=3127" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://m.media-amazon.com/images/I/81HeypNjpFL.jpg" alt="">
-										<span class="artist">LOVEBITES</span>
-										<span class="amount">( 1 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=2369" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/81wHSU7cj7L.jpg" alt="">
-										<span class="artist">LiSA</span>
-										<span class="amount">( 22 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=3329" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://m.media-amazon.com/images/I/81Uzcn32TuL.jpg" alt="">
-										<span class="artist">リーガルリリー</span>
-										<span class="amount">( 1 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=1533" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/5138S4DBVNL.jpg" alt="">
-										<span class="artist">ロードオブメジャー</span>
-										<span class="amount">( 7 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=7391" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://m.media-amazon.com/images/I/71tHIDxO5kL.jpg" alt="">
-										<span class="artist">WRONG SCALE</span>
-										<span class="amount">( 1 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=16011" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://m.media-amazon.com/images/I/71MsAuhMyUL.jpg" alt="">
-										<span class="artist">LONGMAN</span>
-										<span class="amount">( 1 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-							<h3>わ</h3>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=5358" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/716Z-T%2BCiJL.jpg" alt="">
-										<span class="artist">和田光司</span>
-										<span class="amount">( 1 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
-
-								<li>
-									<a href="https://store.piascore.com/search?c=131&p=2589" target="_blank">
-										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/61QWyHYSjfL.jpg" alt="">
-										<span class="artist">WANDS</span>
-										<span class="amount">( 5 )</span><br>
-										<span class="explanation"></span>
-									</a>
-								</li>
+					<h3>わ</h3>
+					<ul class="score-list">
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=5358" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">和田光司</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">和田光司</span>
+								<span class="amount">( 1 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+						<li>
+							<a href="https://store.piascore.com/search?c=131&p=2589" target="_blank" rel="noopener noreferrer">
+								<div class="score-jacket">
+									<span class="jacket-artist">WANDS</span>
+									<span class="jacket-song">楽譜一覧</span>
+								</div>
+								<span class="scoretype">楽譜一覧</span><br>
+								<span class="artist">WANDS</span>
+								<span class="amount">( 5 )</span><br>
+								<span class="explanation"></span>
+							</a>
+						</li>
+					</ul>
 						
-						</div>
-						<!-- //artlist -->
-
-						</ul>
-					<!-- //middlebox -->
 				</div>
-				<!-- //boxcontents -->
+				<!-- //artlist -->
 
-				<!-- SNS -->
+				<!-- ==========================================
+					SNSシェアボタンエリア（LINE・X）
+				========================================== -->
 				<div id="sns">
 					<p><b>ページを共有</b></p>
+					
+					<!-- LINE用シェアボタン -->
 					<a href="https://line.me/R/msg/text/?yamarockmusic%20https%3A%2F%2Fyamarockmusic.github.io%2Fyamarockmusic%2F" target="_blank" rel="noopener noreferrer">
 						<img src="./images/linebutton_20x20.png" alt="LINEで送る">
 					</a>
+					
+					<!-- X（旧Twitter）用シェアボタン -->
 					<a href="https://x.com/intent/tweet?text=yamarockmusic%20-%20バンドスコア%20TAB譜%20楽譜サイト&url=https%3A%2F%2Fyamarockmusic.github.io%2Fyamarockmusic%2F" target="_blank" rel="noopener noreferrer">
 						<img src="./images/twitter_color_32px.png" alt="Xでシェア">
 					</a>
 				</div>
-				<!-- //SNS -->
+				<!-- //SNSシェアボタンエリア終了 -->
 				
-				<!-- JAS -->
-				<div id="jas">
+				<!-- ==========================================
+					著作権管理団体（JASRAC / NexTone）許諾番号エリア
+				========================================== -->
+				
+				<!-- JASRAC許諾番号表示 -->
+				<div id="jasrac" class="jas">
 					<p><b>JASRAC許諾番号</b></p>
-					<img src="./images/jasrac-221058400b8360a7944e393747817f10.png" alt="">
-					<!-- <img src="./images/jasrac1.gif" alt=""> -->
-					<!-- <img src="./images/jasrac2.gif" alt=""> -->
-					<span style="font-size:11px;">9013196001Y37019<br></span>
-					<span style="font-size:11px;">9026286001Y38029<br></span>
-					<span style="font-size:11px;">9026286002Y37019<br></span>
+					<img src="./images/jasrac-221058400b8360a7944e393747817f10.png" alt="JASRACロゴ">
+					
+					<div style="font-size: 11px; line-height: 1.6;">
+						9013196001Y37019<br>
+						9026286001Y38029<br>
+						9026286002Y37019
+					</div>
 				</div>
 
-				<div id="jas">
+				<!-- NexTone許諾番号表示 -->
+				<div id="nextone" class="jas">
 					<p><b>NexTone許諾番号</b></p>
-					<img src="./images/nextone-96984dd07b164ad8b950f9e129d3be3a.png" alt="">
-					<span style="font-size:11px;">ID000003241<br></span>
-					<span style="font-size:11px;">ID000005789<br></span>
-					<span style="font-size:11px;">ID000006472<br></span>
+					<img src="./images/nextone-96984dd07b164ad8b950f9e129d3be3a.png" alt="NexToneロゴ">
+					
+					<div style="font-size: 11px; line-height: 1.6;">
+						ID000003241<br>
+						ID000005789<br>
+						ID000006472
+					</div>
 				</div>
-				<!-- //JAS -->
+				<!-- //著作権管理団体エリア終了 -->
 
-				<!-- amazon -->
-				<!-- <div class="amazon"> -->
-				<!-- 	<script type="text/javascript">amzn_assoc_ad_type ="responsive_search_widget"; amzn_assoc_tracking_id ="yamarock01-22"; amzn_assoc_marketplace ="amazon"; amzn_assoc_region ="JP"; amzn_assoc_placement =""; amzn_assoc_search_type = "search_widget";amzn_assoc_width ="auto"; amzn_assoc_height ="auto"; amzn_assoc_default_search_category =""; amzn_assoc_default_search_key ="";amzn_assoc_theme ="light"; amzn_assoc_bg_color ="FFFFFF"; </script><script src="//z-fe.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&Marketplace=JP"></script> -->
-				<!-- </div> -->
-				<!-- //amazon -->
+			</main>
+			<!-- //main（メインコンテンツエリア終了） -->
 
-			</div>
-			<!-- //main -->
+			<!-- ==========================================
+				サイドバーエリア（画面の横に表示される補足領域）
+			========================================== -->
+			<aside id="side">
 
-			<!-- side -->
-			<div id="side">
+				<h2><img src="./images/art_001.png" alt="アーティストアイコン"> アーティスト一覧</h2>
 
-				<h2><img src="./images/art_001.png" alt=""> アーティスト一覧</h2>
-
-				<!-- artistlist -->
+				<!-- アーティストリストの読み込みエリア -->
 				<div id="artistlist">
 					<ul>
-						<div id="loadlist">
-							<a href="./artist.html">アーティスト一覧の読み込みに失敗しました。<br>
+						<li id="loadlist">
+							<a href="./artist.html">
+								アーティスト一覧の読み込みに失敗しました。<br>
 								JavaScriptが使用できるようブラウザ設定を変更してリロード(再読み込み)してください。<br>
 								または、この文字をクリックしてアーティスト一覧ページへジャンプすることもできます。
 							</a>
-						</div>
+						</li>
 					</ul>
 				</div>
 
-			</div>
-			<!-- //side -->
+			</aside>
+			<!-- //side（サイドバーエリア終了） -->
 
-			<!-- pagetop -->
-			<p id="pagetop"><a href="#wrap">TOP ▲</a></p>
-			<!-- //pagetop -->
+			<!-- ページトップへ戻るボタン -->
+			<p id="pagetop"><a href="#">TOP ▲</a></p>
 
-			<!-- footer -->
+			<!-- フッターエリア（著作権表記） -->
 			<footer>
-				<small>Copyright&copy; 2015　<a href="./index.html"><b>yamarock music</b></a>　All Rights Reserved.</small>
+				<small>Copyright &copy; 2015-2026 <a href="./index.html"><b>yamarock music</b></a> All Rights Reserved.</small>
 			</footer>
-			<!-- //footer -->
 			
 		</div>
-		<!-- //container -->
+		<!-- //container（外枠の箱終了） -->
 
-<!-- ******************************************* -->
-
-		<!-- IMGリンク切れ対策 JS -->
-		<script type="text/javascript">
-		<!-- 
+		<!-- ==========================================
+			画像リンク切れ対策プログラム（jQuery）
+		========================================== -->
+		<script>
 			$(function () {
-				$('img').error(function(){
-					$(this).attr({src:'./images/noimg_001.jpg',alt:'No Image'});
+				$('img').on('error', function(){
+					$(this).attr({
+						src: './images/noimg_001.jpg',
+						alt: 'No Image'
+					});
 				});
 			});
-		 //-->
 		</script>
-		<!-- //IMGリンク切れ対策 JS -->
+		<!-- //画像リンク切れ対策終了 -->
 
-		<!-- layzr JS -->
-		<script type="text/javascript">var layzr = new Layzr();</script>
-
-		<!-- java noscript -->
+		<!-- ==========================================
+			JavaScriptが無効な環境への案内メッセージ
+		========================================== -->
 		<noscript>
 			<p>全てのコンテンツをご覧いただくには、JavaScriptが使用できるようブラウザ設定を変更してください</p>
 		</noscript>
-		<!-- //java noscript -->
-
-		<!-- google analytics ▼試験運用中▼ -->
-		<script>
-		<!--
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-		ga('create', 'UA-57858395-1', 'auto');
-		ga('send', 'pageview');
-		-->
-		</script>
-		<!-- google analytics ▲試験運用中▲ -->
+		<!-- //noscript終了 -->
 
 	</body>
-	<!-- //body -->
-
 </html>
-<!-- //html -->
