@@ -504,73 +504,56 @@
 
 				<h2><img src="./images/art_001.png" alt="アーティストアイコン"> アーティスト一覧</h2>
 
-				<!-- artistlist -->
+				<!-- アーティストリストの読み込みエリア -->
 				<div id="artistlist">
 					<ul>
-						<div id="loadlist">
-							<a href="./artist.html">アーティスト一覧の読み込みに失敗しました。<br>
+						<li id="loadlist">
+							<a href="./artist.html">
+								アーティスト一覧の読み込みに失敗しました。<br>
 								JavaScriptが使用できるようブラウザ設定を変更してリロード(再読み込み)してください。<br>
 								または、この文字をクリックしてアーティスト一覧ページへジャンプすることもできます。
 							</a>
-						</div>
+						</li>
 					</ul>
 				</div>
 
 			</div>
 			<!-- サイドバーエリア終了 -->
 
-			<!-- pagetop -->
-			<p id="pagetop"><a href="#wrap">TOP ▲</a></p>
-			<!-- //pagetop -->
 
-			<!-- footer -->
+			<!-- ページトップへ戻るボタン -->
+			<p id="pagetop"><a href="#">TOP ▲</a></p>
+
+			<!-- フッターエリア（著作権表記） -->
 			<footer>
-				<small>Copyright&copy; 2015　<a href="./index.html"><b>yamarock music</b></a>　All Rights Reserved.</small>
+				<small>Copyright &copy; 2015 <a href="./index.html"><b>yamarock music</b></a> All Rights Reserved.</small>
 			</footer>
-			<!-- //footer -->
 			
 		</div>
-		<!-- //container -->
+		<!-- //container（外枠の箱終了） -->
 
-<!-- ******************************************* -->
-
-		<!-- IMGリンク切れ対策 JS -->
-		<script type="text/javascript">
-		<!-- 
+		<!-- ==========================================
+			画像リンク切れ対策プログラム（jQuery）
+		========================================== -->
+		<script>
 			$(function () {
-				$('img').error(function(){
-					$(this).attr({src:'./images/noimg_001.jpg',alt:'No Image'});
+				$('img').on('error', function(){
+					$(this).attr({
+						src: './images/noimg_001.jpg',
+						alt: 'No Image'
+					});
 				});
 			});
-		 //-->
 		</script>
-		<!-- //IMGリンク切れ対策 JS -->
+		<!-- //画像リンク切れ対策終了 -->
 
-		<!-- layzr JS -->
-		<script type="text/javascript">var layzr = new Layzr();</script>
-
-		<!-- java noscript -->
+		<!-- ==========================================
+			JavaScriptが無効な環境への案内メッセージ
+		========================================== -->
 		<noscript>
 			<p>全てのコンテンツをご覧いただくには、JavaScriptが使用できるようブラウザ設定を変更してください</p>
 		</noscript>
-		<!-- //java noscript -->
-
-		<!-- google analytics ▼試験運用中▼ -->
-		<script>
-		<!--
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-		ga('create', 'UA-57858395-1', 'auto');
-		ga('send', 'pageview');
-		-->
-		</script>
-		<!-- google analytics ▲試験運用中▲ -->
+		<!-- //noscript終了 -->
 
 	</body>
-	<!-- //body -->
-
 </html>
-<!-- //html -->
