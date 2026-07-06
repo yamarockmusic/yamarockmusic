@@ -612,3 +612,19 @@ faq
 	color: #000000;											/*フォント*/
 	padding: 4px 0px 4px 0px;								/*余白*/
 }
+
+/*-------------------------------------------------------------------------
+サイドバーのアーティストリストのカード化を無効化する
+---------------------------------------------------------------------------*/
+#side #artistlist li {
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: none !important;
+    display: block !important;
+}
+
+#side #artistlist h3 {
+    margin: 10px 0 5px 0 !important;
+    font-size: 14px !important;
+}
