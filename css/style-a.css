@@ -156,23 +156,6 @@ sets
 	margin: 0px 10px 0px 160px;											/*余白外*/	
 }
 
-/*-------------------------------------------------------------------------
-サイドバーのアーティストリストのカード化を無効化する（style-a用）
----------------------------------------------------------------------------*/
-#side #artistlist li {
-    border: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    background: none !important;
-    display: block !important;
-}
-
-#side #artistlist h3 {
-    margin: 10px 0 5px 0 !important;
-    font-size: 14px !important;
-}
-
-
 
 /*-------------------------------------------------------------------------
 ▼▼テスト専用▼▼
