@@ -1,524 +1,444 @@
-﻿<!DOCTYPE html>
-<html lang="ja">
+﻿<!doctype html>
+	<!-- Facebook OGP -->
+	<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja" dir="ltr" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+
 	<head>
 		<meta charset="utf-8">
-		
-		<!-- タイトル -->
+
+		<!-- キャッシュ -->
+		<meta http-equiv="Expires" content="86400">
+
+		<!-- タイトル / キーワード -->
 		<title>yamarockmusic バンドスコア｜TAB譜｜楽譜 販売</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width">
+		<meta name="copyright" content="yamarockmusic">
 		<meta name="description" content="yamarockmusic バンドスコア｜TAB譜｜楽譜 販売">
-		
-		<!-- お気に入りアイコン（ファビコン） -->
-		<link rel="icon" href="./favicon.ico"> <!-- ブラウザのタブに表示されるアイコン -->
-		<link rel="apple-touch-icon" href="./images/webclip.png"> <!-- スマホのホーム画面用のアイコン -->
-		
-		<!-- OGP（LINEやSNSでシェアされた時の設定） -->
+		<meta name="keywords" content="ギター,TAB,スコア,初心者">
+
+		<!-- ファビコン -->
+		<link rel="shortcut icon" href="./favicon.ico">
+
+		<!-- ウェブクリップアイコン -->
+		<link rel="apple-touch-icon-precomposed" href="./images/webclip.png" />
+
+		<!-- OGP -->
 		<meta property="og:locale" content="ja_JP">
-		<meta property="og:title" content="yamarockmusic [ヤマロック ミュージック]">
+		<meta property="og:title" content="yamarockmusic [ヤマロック ミュージック]" />
 		<meta property="og:type" content="article">
-		<meta property="og:description" content="1曲から購入できる楽譜配信サイト">
-		<meta property="og:url" content="https://yamarockmusic.github.io/yamarockmusic/">
-		<meta property="og:image" content="https://yamarockmusic.github.io/yamarockmusic/images/ogp01.jpg">
+		<meta property="og:description" content="1曲から購入できる楽譜配信サイト" />
+		<meta property="og:url" content="https://yamarockmusic.github.io/yamarockmusic/" />
+		<meta property="og:image" content="https://yamarockmusic.github.io/yamarockmusic/images/ogp01.jpg" />
 		
-		<!-- Twitter・X専用のシェア設定 -->
-		<meta name="twitter:card" content="summary"> <!-- 小さな画像と文字のカード形式で表示 -->
-		<meta name="twitter:site" content="@yamarockmusic">
+		<!-- twitter OGP -->
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="@yamarockmusic" />
 		
-		<!-- CSS読み込み -->
+		<!-- Facebook専用OGP -->
+		<meta property="fb:admins" content="388404441309637">
+
+		<!-- CSS -->
 		<link rel="stylesheet" href="./css/style.min.css">
-		<link href="./css/style-s.min.css" rel="stylesheet" media="only screen and (max-width:731px)"><!-- スマホ対応(731px以下の場合に適用) -->
+		<link href="./css/style-s.min.css" rel="stylesheet" type="text/css" media="only screen and (max-width:731px)">
 
-		<!-- jQuery読み込み -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-		<!-- jQueryが3.7.1でうまく動作しなかった場合は1.10.1にすること(以前はこれで動いていたので念のため残しておく) -->
-		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script> -->
+		<!-- jQuery -->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 
-		<!-- Smooth Scroll JS（画面のスムーズスクロール） -->
-		<script src="./js/smoothscroll.js"></script>
-	
-		<!-- pagetop JS（トップへ戻るボタンの制御） -->
-		<script src="./js/pagetop.js"></script>
-		
-		<!-- loadlist JS（サイドバーのアーティスト一覧自動読み込み） -->
-		<script>
+		<!-- layzr JS *jsフォルダに本体も入っている とりあえずcdnjsから読込 ver2.xx系はうまく動作しない 原因不明 -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/layzr.js/1.4.3/layzr.min.js"></script>
+
+		<!-- Smooth Scroll JS -->
+		<script type="text/javascript" src="./js/smoothscroll.js"></script>
+
+		<!-- loadlist JS -->
+		<script type="text/javascript">
+		<!--
 			$(function(){
 				$('#loadlist').load('./artist.html #artlist');
-			});
+			}); 
+		-->
 		</script>
+		<!-- //loadlist JS -->
 
+		<!-- pagetop JS -->
+		<script type="text/javascript" src="./js/pagetop.js"></script>
+
+		<!-- ▼試験運用中 スマホ対策 シングルタップレスポンス -->
+		<!-- 参考 http://www.rainorshine.asia/2011/09/01/post2127.html -->
+		<script src="./js/jquery.tap-1.0.3.js"></script>
+
+		<!-- ▼試験運用中 google analytics -->
+		<meta http-equiv="Content-Script-Type" content="text/javascript">
+		
 	</head>
 
-	<!-- ==========================================
-	ヘッダーエリア（サイトの看板・共通メニュー部分）
-	========================================== -->
-	<header id="header">
-		<h1>バンドスコア｜TAB譜｜楽譜 ダウンロード配信サイト</h1>
-		
-		<!-- サイトのロゴマーク（クリックするとトップページへ戻るリンク） -->
-		<div id="logo">
-			<a href="./index.html">
-				<img src="./images/logo_600x245.png" width="122" height="50" alt="yamarockmusic ロゴ">
-			</a>
-		</div>
-				
-		<!-- メインのナビゲーションメニュー -->
-		<nav id="menu-box">
-			<ul>
-				<li id="current"><a href="#">TOP</a></li> <!-- 現在表示しているページ（TOP） -->
-				<li><a href="./artist.html">楽譜一覧</a></li>
-				<li><a href="./faq.html">FAQ</a></li>
-				<li><a href="./contact.html">Contact</a></li>
+	<!-- body -->
+	<body>
+
+		<!-- container -->
+		<div id="container">
+
+			<!-- header -->
+			<div id ="header">
+				<h1>バンドスコア｜TAB譜｜楽譜 ダウンロード配信サイト</h1>
+				<div id="logo"><a href="./index.html#"><img src="./images/logo_600x245.png" width="122" height="50" alt=""></a></div>
+				<!-- nav -->
+				<nav id="menu-box">
+					<ul>
+						<li id="current"><a href="#">TOP</a></li>
+						<li class=""><a href="./artist.html">楽譜一覧</a></li>
+						<li class=""><a href="./faq.html">FAQ</a></li>
+						<li class=""><a href="./contact.html">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
+			<!--// header -->
+
+			<!-- syncer-brcb -->
+			<ul id="syncer-brcb">
+				<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="#" itemprop="url"><span itemprop="title">TOP</span></a></li>
 			</ul>
-		</nav>
-	</header>
-	<!--// ヘッダーエリア終了 -->
 
-	<!-- ==========================================
-	パンくずリスト（現在地を示すナビ）
-	※Googleの最新ルール（schema.org）に対応させています
-	========================================== -->
-	<ul id="syncer-brcb">
-		<li itemscope itemtype="https://schema.org/ListItem">
-			<a href="#" itemprop="item">
-				<span itemprop="name">TOP</span>
-			</a>
-			<meta itemprop="position" content="1">
-		</li>
-	</ul>
-
-	<!-- ==========================================
-	メインコンテンツエリア開始
-	========================================== -->
-	<main id="main">
+			<!-- main -->
+			<div id="main">
 			
-		<!-- 重要なお知らせエリア -->
-		<h2><img src="./images/1467095562_speech_bubble.png" alt="お知らせアイコン"> コンビニ決済に対応しました！</h2>
-				
-		<!-- お知らせ本文 -->
-		<p>ご要望の多かったコンビニ決済に対応するため、「ココミュ」での楽譜販売を開始しました！</p>
-		<p>「ココミュ」ではコンビニ決済の他、LINE Pay、Pay Pay、銀行振込等に対応しております。</p>
-		<p>既にココミュにて販売されている楽譜は<a href="https://www.kokomu.jp/artist/yamarockmusic" target="_blank"> こちら </a>からご覧ください。</p>
-		<p>楽譜は順次アップされていきますので、是非ご利用ください。</p>
-		<p>なお、お急ぎの方は画面上部「Contact」より、お問い合わせフォームにてお知らせ頂けますと幸いです。</p>
-		<br>
-				
-		<!-- ココミュへの直接リンクボタン -->
-		<a href="https://www.kokomu.jp/artist/yamarockmusic" style="display:block; text-decoration: none;" target="_blank">
-			<p>
-				<img src="./images/kokomu_logo.png" alt="ココミュロゴ" width="100"> から販売されている楽譜を探す
-			</p>
-		</a>
-		<br>
-		
-		<!-- ==========================================
-			新着楽譜エリア
-		========================================== -->
-		<h2><img src="./images/new_001.png" alt="新着アイコン"> 新着楽譜</h2>
+				<h2><img src="./images/1467095562_speech_bubble.png" alt=""> コンビニ決済に対応しました！</h2>
+					<p>ご要望の多かったコンビニ決済に対応するため、「ココミュ」での楽譜販売を開始しました！</p>
+					<p>「ココミュ」ではコンビニ決済の他、LINE Pay、Pay Pay、銀行振込等に対応しております。</p>
+					<p>既にココミュにて販売されている楽譜は<a href="https://www.kokomu.jp/artist/yamarockmusic" target="_blank"> こちら </a>からご覧ください。</p>
+					<p>楽譜は順次アップされていきますので、是非ご利用ください。</p>
+					<p>なお、お急ぎの方は画面上部「Contact」より、お問い合わせフォームにてお知らせ頂けますと幸いです。</p><br>
+						<a href="https://www.kokomu.jp/artist/yamarockmusic" style="display:block; text-decoration: none;" target="_blank">
+							<p><img src="./images/kokomu_logo.png" alt="" width=100px height=auto>　から販売されている楽譜を探す</p>
+						</a><br>
+						
+					
+					
 
-		<!-- 楽譜一覧を包むボックス（大サイズカード用） -->
-		<div class="boxcontents">
-			<ul class="largebox">
+				<h2><img src="./images/new_001.png" alt=""> 新着楽譜</h2>
 
-				<!-- 楽譜カード -->
-				<li>
-					<a href="https://store.piascore.com/scores/430079" target="_blank">
-						<div class="score-jacket">
-							<span class="jacket-artist">Ado</span>
-							<span class="jacket-song">CAT'S EYE</span>
-						</div>
-						<span class="point1">NEW</span>
-						<span class="scoretype">バンドスコア</span>
-						<span class="scorelevel"> 中級 </span><br>
-						<span class="artist">Ado</span><br>
-						<span class="song">CAT'S EYE</span><br>
-						<span class="explanation">アニメ『キャッツ・アイ』テーマ曲</span>
-					</a>
-				</li>
+				<!-- boxcontents -->
+				<div class="boxcontents">
+					<!-- largebox -->
+					<ul class="largebox">
 
-				<!-- 楽譜カード -->
-				<li>
-					<a href="https://store.piascore.com/scores/414974" target="_blank">
-						<div class="score-jacket">
-							<span class="jacket-artist">サバシスター</span>
-							<span class="jacket-song">覚悟を決めろ！</span>
-						</div>
-						<span class="point1">NEW</span>
-						<span class="scoretype">バンドスコア</span>
-						<span class="scorelevel"> 初級 </span><br>
-						<span class="artist">サバシスター</span><br>
-						<span class="song">覚悟を決めろ！</span><br>
-						<span class="explanation">1stアルバム『覚悟を決めろ！』収録曲</span>
-					</a>
-				</li>
+						<li>
+							<a href="https://store.piascore.com/scores/430079" target="_blank">
+								<img src="./images/loading.png" data-layzr="./images/noimg_001.jpg" alt="">
+								<span class="point1">NEW</span>
+								<span class="scoretype">バンドスコア</span>
+								<span class="scorelevel">　中級　</span><br>
+								<span class="artist">Ado</span><br>
+								<span class="song">CAT'S EYE</span><br>
+								<span class="explanation">アニメ『キャッツ・アイ』テーマ曲</span>
+							</a>
+						</li>
 
-				<!-- 楽譜カード -->
-				<li>
-					<a href="https://store.piascore.com/scores/391694" target="_blank">
-						<div class="score-jacket">
-							<span class="jacket-artist">Hi-STANDARD</span>
-							<span class="jacket-song">A Ha Ha</span>
-						</div>
-						<span class="point1">NEW</span>
-						<span class="scoretype">バンドスコア</span>
-						<span class="scorelevel">初～中級</span><br>
-						<span class="artist">Hi-STANDARD</span><br>
-						<span class="song">A Ha Ha</span><br>
-						<span class="explanation">ミニアルバム『Screaming Newborn Baby』収録曲</span>
-					</a>
-				</li>
+						<li>
+							<a href="https://store.piascore.com/scores/414974" target="_blank">
+								<img src="./images/loading.png" data-layzr="./images/noimg_001.jpg" alt="">
+								<span class="point1">NEW</span>
+								<span class="scoretype">バンドスコア</span>
+								<span class="scorelevel">　初級　</span><br>
+								<span class="artist">サバシスター</span><br>
+								<span class="song">覚悟を決めろ！</span><br>
+								<span class="explanation">1stアルバム『覚悟を決めろ！』収録曲</span>
+							</a>
+						</li>
 
-				<!-- 楽譜カード -->
-				<li>
-					<a href="https://store.piascore.com/scores/306401" target="_blank">
-						<div class="score-jacket">
-							<span class="jacket-artist">HEY-SMITH</span>
-							<span class="jacket-song">Feel My Pain</span>
-						</div>
-						<span class="point1">NEW</span>
-						<span class="scoretype">バンドスコア</span>
-						<span class="scorelevel"> 初級 </span><br>
-						<span class="artist">HEY-SMITH</span><br>
-						<span class="song">Feel My Pain</span><br>
-						<span class="explanation">アニメ『ケンガンアシュラ Season2 Part.2』OP曲</span>
-					</a>
-				</li>
+						<li>
+							<a href="https://store.piascore.com/scores/391694" target="_blank">
+								<img src="./images/loading.png" data-layzr="./images/noimg_001.jpg" alt="">
+								<span class="point1">NEW</span>
+								<span class="scoretype">バンドスコア</span>
+								<span class="scorelevel">初～中級</span><br>
+								<span class="artist">Hi-STANDARD</span><br>
+								<span class="song">A Ha Ha</span><br>
+								<span class="explanation">ミニアルバム『Screaming Newborn Baby』収録曲</span>
+							</a>
+						</li>
 
-				<!-- 楽譜カード -->
-				<li>
-					<a href="https://store.piascore.com/scores/266388" target="_blank">
-						<div class="score-jacket">
-							<span class="jacket-artist">ハルカミライ</span>
-							<span class="jacket-song">ファイト!!</span>
-						</div>
-						<span class="point1">NEW</span>
-						<span class="scoretype">バンドスコア</span>
-						<span class="scorelevel"> 初級 </span><br>
-						<span class="artist">ハルカミライ</span><br>
-						<span class="song">ファイト!!</span><br>
-						<span class="explanation">ライブの定番曲が待望のバンドスコア化！</span>
-					</a>
-				</li>
+						<li>
+							<a href="https://store.piascore.com/scores/306401" target="_blank">
+								<img src="./images/loading.png" data-layzr="./images/noimg_001.jpg" alt="">
+								<span class="point1">NEW</span>
+								<span class="scoretype">バンドスコア</span>
+								<span class="scorelevel">　初級　</span><br>
+								<span class="artist">HEY-SMITH</span><br>
+								<span class="song">Feel My Pain</span><br>
+								<span class="explanation">アニメ『ケンガンアシュラ Season2 Part.2』OP曲</span>
+							</a>
+						</li>
 
-				<!-- 楽譜カード -->
-				<li>
-					<a href="https://store.piascore.com/scores/252940" target="_blank">
-						<div class="score-jacket">
-							<span class="jacket-artist">HEY-SMITH</span>
-							<span class="jacket-song">California</span>
-						</div>
-						<span class="point1">NEW</span>
-						<span class="scoretype">バンドスコア</span>
-						<span class="scorelevel"> 初級 </span><br>
-						<span class="artist">HEY-SMITH</span><br>
-						<span class="song">California</span><br>
-						<span class="explanation">6thアルバム「Life In The Sun」リード曲</span>
-					</a>
-				</li>
+						<li>
+							<a href="https://store.piascore.com/scores/266388" target="_blank">
+								<img src="./images/loading.png" data-layzr="./images/noimg_001.jpg" alt="">
+								<span class="point1">NEW</span>
+								<span class="scoretype">バンドスコア</span>
+								<span class="scorelevel">　初級　</span><br>
+								<span class="artist">ハルカミライ</span><br>
+								<span class="song">ファイト!!</span><br>
+								<span class="explanation">ライブの定番曲が待望のバンドスコア化！</span>
+							</a>
+						</li>
 
-				<!-- 楽譜カード -->
-				<li>
-					<a href="https://store.piascore.com/scores/247185" target="_blank">
-						<div class="score-jacket">
-							<span class="jacket-artist">HEY-SMITH</span>
-							<span class="jacket-song">Say My Name</span>
-						</div>
-						<span class="point1">NEW</span>
-						<span class="scoretype">バンドスコア</span>
-						<span class="scorelevel"> 初級 </span><br>
-						<span class="artist">HEY-SMITH</span><br>
-						<span class="song">Say My Name</span><br>
-						<span class="explanation">TVアニメ『東京リベンジャーズ』天竺編ED曲</span>
-					</a>
-				</li>
+						<li>
+							<a href="https://store.piascore.com/scores/252940" target="_blank">
+								<img src="./images/loading.png" data-layzr="./images/noimg_001.jpg" alt="">
+								<span class="point1">NEW</span>
+								<span class="scoretype">バンドスコア</span>
+								<span class="scorelevel">　初級　</span><br>
+								<span class="artist">HEY-SMITH</span><br>
+								<span class="song">California</span><br>
+								<span class="explanation">6thアルバム「Life In The Sun」リード曲</span>
+							</a>
+						</li>
 
-				<!-- 楽譜カード -->
-				<li>
-					<a href="https://store.piascore.com/scores/229423" target="_blank">
-						<div class="score-jacket">
-							<span class="jacket-artist">yutori</span>
-							<span class="jacket-song">ワンルーム</span>
-						</div>
-						<span class="point1">NEW</span>
-						<span class="scoretype">バンドスコア</span>
-						<span class="scorelevel">初～中級</span><br>
-						<span class="artist">yutori</span><br>
-						<span class="song">ワンルーム</span><br>
-						<span class="explanation">2ndミニ・アルバム『夜間逃避行』収録曲</span>
-					</a>
-				</li>
+						<li>
+							<a href="https://store.piascore.com/scores/247185" target="_blank">
+								<img src="./images/loading.png" data-layzr="./images/noimg_001.jpg" alt="">
+								<span class="point1">NEW</span>
+								<span class="scoretype">バンドスコア</span>
+								<span class="scorelevel">　初級　</span><br>
+								<span class="artist">HEY-SMITH</span><br>
+								<span class="song">Say My Name</span><br>
+								<span class="explanation">TVアニメ『東京リベンジャーズ』天竺編ED曲</span>
+							</a>
+						</li>
 
-			</ul>
-			<!-- //largebox終了 -->
-		</div>
-		<!-- //boxcontents（新着楽譜ボックス終了） -->
-		
-		<!-- ==========================================
-		月間ランキングエリア
-		========================================== -->
-		<h2><img src="./images/rank_001.png" alt="ランキングアイコン"> 2026・07 月間ランキング</h2>
+						<li>
+							<a href="https://store.piascore.com/scores/229423" target="_blank">
+								<img src="./images/loading.png" data-layzr="./images/noimg_001.jpg" alt="">
+								<span class="point1">NEW</span>
+								<span class="scoretype">バンドスコア</span>
+								<span class="scorelevel">初～中級</span><br>
+								<span class="artist">yutori</span><br>
+								<span class="song">ワンルーム</span><br>
+								<span class="explanation">2ndミニ・アルバム『夜間逃避行』収録曲</span>
+							</a>
+						</li>
 
-		<!-- 楽譜ランキング一覧を包むボックス（中サイズカード用）-->
-		<div class="boxcontents">
-			<ul class="middlebox">
+					</ul>
+					<!-- //largebox -->
+				</div>
+				<!-- //boxcontents -->
 
-				<!-- ランキング -->
-				<li>
-					<a href="https://store.piascore.com/scores/7827" target="_blank">
-						<div class="score-jacket">
-							<span class="jacket-artist">嵐</span>
-							<span class="jacket-song">Happiness</span>
-						</div>
-						<span class="point2">1位</span>
-						<span class="scoretype">バンドスコア</span>
-						<span class="scorelevel"> 中級 </span><br>
-						<span class="artist">嵐</span><br>
-						<span class="song">Happiness</span><br>
-						<span class="explanation">20thシングル</span>
-					</a>
-				</li>
+				<h2><img src="./images/rank_001.png" alt""> 2026・07 月間ランキング</h2>
 
-				<!-- ランキング -->
-				<li>
-					<a href="https://store.piascore.com/scores/7826" target="_blank">
-						<div class="score-jacket">
-							<span class="jacket-artist">嵐</span>
-							<span class="jacket-song">Love so sweet</span>
-						</div>
-						<span class="point2">2位</span>
-						<span class="scoretype">バンドスコア</span>
-						<span class="scorelevel"> 中級 </span><br>
-						<span class="artist">嵐</span><br>
-						<span class="song">Love so sweet</span><br>
-						<span class="explanation">TBS『花より男子２』主題歌</span>
-					</a>
-				</li>
+				<!-- boxcontents -->
+				<div class="boxcontents">
+					<!-- middlebox -->
+					<ul class="middlebox">
 
-				<!-- ランキング -->
-				<li>
-					<a href="https://store.piascore.com/scores/391694" target="_blank">
-						<div class="score-jacket">
-							<span class="jacket-artist">Hi-STANDARD</span>
-							<span class="jacket-song">A Ha Ha</span>
-						</div>
-						<span class="point2">3位</span>
-						<span class="scoretype">バンドスコア</span>
-						<span class="scorelevel">初～中級</span><br>
-						<span class="artist">Hi-STANDARD</span><br>
-						<span class="song">A Ha Ha</span><br>
-						<span class="explanation">ミニアルバム『Screaming Newborn Baby』収録曲</span>
-					</a>
-				</li>
+						<li>
+							<a href="https://store.piascore.com/scores/7827" target="_blank">
+								<img src="./images/loading.png" data-layzr="./images/noimg_001.jpg" alt="">
+								<span class="point2">1位</span>
+								<span class="scoretype">バンドスコア</span>
+								<span class="scorelevel">　中級　</span><br>
+								<span class="artist">嵐</span><br>
+								<span class="song">Happiness</span><br>
+								<span class="explanation">20thシングル</span>
+							</a>
+						</li>
 
-				<!-- ランキング -->
-				<li>
-					<a href="https://store.piascore.com/scores/247185" target="_blank">
-						<div class="score-jacket">
-							<span class="jacket-artist">HEY-SMITH</span>
-							<span class="jacket-song">Say My Name</span>
-						</div>
-						<span class="point2">4位</span>
-						<span class="scoretype">バンドスコア</span>
-						<span class="scorelevel"> 初級 </span><br>
-						<span class="artist">HEY-SMITH</span><br>
-						<span class="song">Say My Name</span><br>
-						<span class="explanation">TVアニメ『東京リベンジャーズ』天竺編ED曲</span>
-					</a>
-				</li>
+						<li>
+							<a href="https://store.piascore.com/scores/7826" target="_blank">
+								<img src="./images/loading.png" data-layzr="./images/noimg_001.jpg" alt="">
+								<span class="point2">2位</span>
+								<span class="scoretype">バンドスコア</span>
+								<span class="scorelevel">　中級　</span><br>
+								<span class="artist">嵐</span><br>
+								<span class="song">Love so sweet</span><br>
+								<span class="explanation">TBS『花より男子２』主題歌</span>
+							</a>
+						</li>
 
-				<!-- ランキング -->
-				<li>
-					<a href="https://store.piascore.com/scores/8321" target="_blank">
-						<div class="score-jacket">
-							<span class="jacket-artist">男闘呼組</span>
-							<span class="jacket-song">TIME ZONE</span>
-						</div>
-						<span class="point2">5位</span>
-						<span class="scoretype">バンドスコア</span>
-						<span class="scorelevel">初～中級</span><br>
-						<span class="artist">男闘呼組</span><br>
-						<span class="song">TIME ZONE</span><br>
-						<span class="explanation">『1989年2月28日発売』3rdシングル</span>
-					</a>
-				</li>
+						<li>
+							<a href="https://store.piascore.com/scores/391694" target="_blank">
+								<img src="./images/loading.png" data-layzr="./images/noimg_001.jpg" alt="">
+								<span class="point2">3位</span>
+								<span class="scoretype">バンドスコア</span>
+								<span class="scorelevel">初～中級</span><br>
+								<span class="artist">Hi-STANDARD</span><br>
+								<span class="song">A Ha Ha</span><br>
+								<span class="explanation">ミニアルバム『Screaming Newborn Baby』収録曲</span>
+							</a>
+						</li>
 
-				<!-- ランキング -->
-				<li>
-					<a href="https://store.piascore.com/scores/8320" target="_blank">
-						<div class="score-jacket">
-							<span class="jacket-artist">男闘呼組</span>
-							<span class="jacket-song">DAYBREAK</span>
-						</div>
-						<span class="point2">6位</span>
-						<span class="scoretype">バンドスコア</span>
-						<span class="scorelevel">初～中級</span><br>
-						<span class="artist">男闘呼組</span><br>
-						<span class="song">DAYBREAK</span><br>
-						<span class="explanation">男闘呼組デビューシングル</span>
-					</a>
-				</li>
+						<li>
+							<a href="https://store.piascore.com/scores/247185" target="_blank">
+								<img src="./images/loading.png" data-layzr="./images/noimg_001.jpg" alt="">
+								<span class="point2">4位</span>
+								<span class="scoretype">バンドスコア</span>
+								<span class="scorelevel">　初級　</span><br>
+								<span class="artist">HEY-SMITH</span><br>
+								<span class="song">Say My Name</span><br>
+								<span class="explanation">TVアニメ『東京リベンジャーズ』天竺編ED曲</span>
+							</a>
+						</li>
 
-				<!-- ランキング -->
-				<li>
-					<a href="https://store.piascore.com/scores/8868" target="_blank">
-						<div class="score-jacket">
-							<span class="jacket-artist">LiSA</span>
-							<span class="jacket-song">ROCK-mode</span>
-						</div>
-						<span class="point2">7位</span>
-						<span class="scoretype">バンドスコア</span>
-						<span class="scorelevel">初～中級</span><br>
-						<span class="artist">LiSA</span><br>
-						<span class="song">ROCK-mode</span><br>
-						<span class="explanation">アルバム『LOVER SMiLE』収録曲</span>
-					</a>
-				</li>
+						<li>
+							<a href="https://store.piascore.com/scores/8321" target="_blank">
+								<img src="./images/loading.png" data-layzr="./images/noimg_001.jpg" alt="">
+								<span class="point2">5位</span>
+								<span class="scoretype">バンドスコア</span>
+								<span class="scorelevel">初～中級</span><br>
+								<span class="artist">男闘呼組</span><br>
+								<span class="song">TIME ZONE</span><br>
+								<span class="explanation">『1989年2月28日発売』3rdシングル</span>
+							</a>
+						</li>
 
-				<!-- ランキング -->
-				<li>
-					<a href="https://store.piascore.com/scores/51493" target="_blank">
-						<div class="score-jacket">
-							<span class="jacket-artist">陰陽座</span>
-							<span class="jacket-song">甲賀忍法帖</span>
-						</div>
-						<span class="point2">8位</span>
-						<span class="scoretype">バンドスコア</span>
-						<span class="scorelevel"> 中級 </span><br>
-						<span class="artist">陰陽座</span><br>
-						<span class="song">甲賀忍法帖</span><br>
-						<span class="explanation">10thシングル</span>
-					</a>
-				</li>
+						<li>
+							<a href="https://store.piascore.com/scores/8320" target="_blank">
+								<img src="./images/loading.png" data-layzr="./images/noimg_001.jpg" alt="">
+								<span class="point2">6位</span>
+								<span class="scoretype">バンドスコア</span>
+								<span class="scorelevel">初～中級</span><br>
+								<span class="artist">男闘呼組</span><br>
+								<span class="song">DAYBREAK</span><br>
+								<span class="explanation">男闘呼組デビューシングル</span>
+							</a>
+						</li>
 
-				<!-- ランキング -->
-				<li>
-					<a href="https://store.piascore.com/scores/7772" target="_blank">
-						<div class="score-jacket">
-							<span class="jacket-artist">the peggies</span>
-							<span class="jacket-song">ネバーランド</span>
-						</div>
-						<span class="point2">9位</span>
-						<span class="scoretype">バンドスコア</span>
-						<span class="scorelevel">初～中級</span><br>
-						<span class="artist">the peggies</span><br>
-						<span class="song">ネバーランド</span><br>
-						<span class="explanation">メジャー1stアルバム『super boy ! super girl !!』収録</span>
-					</a>
-				</li>
+						<li>
+							<a href="https://store.piascore.com/scores/8868" target="_blank">
+								<img src="./images/loading.png" data-layzr="./images/noimg_001.jpg" alt="">
+								<span class="point2">7位</span>
+								<span class="scoretype">バンドスコア</span>
+								<span class="scorelevel">初～中級</span><br>
+								<span class="artist">LiSA</span><br>
+								<span class="song">ROCK-mode</span><br>
+								<span class="explanation">アルバム『LOVER SMiLE』収録曲</span>
+							</a>
+						</li>
 
-				<!-- ランキング -->
-				<li>
-					<a href="https://store.piascore.com/scores/8440" target="_blank">
-						<div class="score-jacket">
-							<span class="jacket-artist">WANDS</span>
-							<span class="jacket-song">世界が終るまでは…</span>
-						</div>
-						<span class="point2">10位</span>
-						<span class="scoretype">バンドスコア</span>
-						<span class="scorelevel">初～中級</span><br>
-						<span class="artist">WANDS</span><br>
-						<span class="song">世界が終るまでは…</span><br>
-						<span class="explanation">アニメ『SLAM DUNK』ED曲</span>
-					</a>
-				</li>
+						<li>
+							<a href="https://store.piascore.com/scores/51493" target="_blank">
+								<img src="./images/loading.png" data-layzr="./images/noimg_001.jpg" alt="">
+								<span class="point2">8位</span>
+								<span class="scoretype">バンドスコア</span>
+								<span class="scorelevel">　中級　</span><br>
+								<span class="artist">陰陽座</span><br>
+								<span class="song">甲賀忍法帖</span><br>
+								<span class="explanation">10thシングル</span>
+							</a>
+						</li>
 
-			</ul>
-			<!-- //middlebox終了 -->
-		</div>
-		<!-- //boxcontents（ランキングボックス終了） -->
+						<li>
+							<a href="https://store.piascore.com/scores/7772" target="_blank">
+								<img src="./images/loading.png" data-layzr="./images/noimg_001.jpg" alt="">
+								<span class="point2">9位</span>
+								<span class="scoretype">バンドスコア</span>
+								<span class="scorelevel">初～中級</span><br>
+								<span class="artist">the peggies</span><br>
+								<span class="song">ネバーランド</span><br>
+								<span class="explanation">メジャー1stアルバム『super boy ! super girl !!』収録</span>
+							</a>
+						</li>
 
-				<!-- ==========================================
-					お知らせエリア
-				========================================== -->
-				<h2><img src="./images/1467095562_speech_bubble.png" alt="お知らせアイコン"> お知らせ</h2>				
+						<li>
+							<a href="https://store.piascore.com/scores/8440" target="_blank">
+								<img src="./images/loading.png" data-layzr="./images/noimg_001.jpg" alt="">
+								<span class="point2">10位</span>
+								<span class="scoretype">バンドスコア</span>
+								<span class="scorelevel">初～中級</span><br>
+								<span class="artist">WANDS</span><br>
+								<span class="song">世界が終るまでは…</span><br>
+								<span class="explanation">アニメ『SLAM DUNK』ED曲</span>
+							</a>
+						</li>
 
-				<!-- 最新のお知らせ（2026年） -->
+					</ul>
+					<!-- //middlebox -->
+
+				<!-- お知らせ　ここから -->
+
+				<h2><img src="./images/1467095562_speech_bubble.png" alt=""> お知らせ</h2>				
+
 				<p>■2026.7.5</p>
 				<p>HPアドレス(URL)が変わりました。</p>
 				<p>お気に入り（ブックマーク）登録されている方は登録情報の修正をお願いいたします。</p>
 				<p>https://yamarockmusic.github.io/yamarockmusic/</p>
 				<br>
 
-				<!-- 過去のお知らせ（2020年） -->
 				<p>■2020.7.1</p>
-				<p><s>現在『嵐』のバンドスコアにて数曲の販売を停止してます。</s></p>
-				<p><s>再販売時にはtwitterにてお知らせいたします。</s></p>
+				<p><s>現在『嵐』のバンドスコアにて数曲の販売を停止してます。</p>
+				<p>再販売時にはtwitterにてお知らせいたします。</s></p>
 				<p><a href="https://twitter.com/yamarockmusic" target="_blank"><b>twitterはこちら</b></a></p>
-				<p><span style="color: #ff0000;">&gt;販売再開しました！</span></p>
+				<p><font color="#ff0000">>販売再開しました！</font></p>
 				<br>
-				<!-- //お知らせエリア終了 -->
 
-				<!-- ==========================================
-					SNSシェアボタンエリア（LINE・X）
-				========================================== -->
+				<p>■2018.10.1</p>
+				<p>HPアドレス(URL)が変わりました。</p>
+				<p>お気に入り（ブックマーク）登録されている方は登録情報の修正をお願いいたします。</p>
+				<p>http://yamarockmusic.g1.xrea.com/</p>
+				<br>
+				<!-- お知らせ　ここまで -->
+
+				</div>
+				<!-- //boxcontents -->
+
+				<!-- SNS -->
 				<div id="sns">
 					<p><b>ページを共有</b></p>
-					
-					<!-- LINE用シェアボタン -->
 					<a href="https://line.me/R/msg/text/?yamarockmusic%20https%3A%2F%2Fyamarockmusic.github.io%2Fyamarockmusic%2F" target="_blank" rel="noopener noreferrer">
 						<img src="./images/linebutton_20x20.png" alt="LINEで送る">
 					</a>
-					
-					<!-- X（旧Twitter）用シェアボタン -->
 					<a href="https://x.com/intent/tweet?text=yamarockmusic%20-%20バンドスコア%20TAB譜%20楽譜サイト&url=https%3A%2F%2Fyamarockmusic.github.io%2Fyamarockmusic%2F" target="_blank" rel="noopener noreferrer">
 						<img src="./images/twitter_color_32px.png" alt="Xでシェア">
 					</a>
 				</div>
-				<!-- //SNSシェアボタンエリア終了 -->
+				<!-- //SNS -->
 				
-				<!-- ==========================================
-					著作権管理団体（JASRAC / NexTone）許諾番号エリア
-				========================================== -->
-				
-				<!-- JASRAC許諾番号表示 -->
-				<div id="jasrac" class="jas">
+				<!-- JAS -->
+				<div id="jas">
 					<p><b>JASRAC許諾番号</b></p>
-					<img src="./images/jasrac-221058400b8360a7944e393747817f10.png" alt="JASRACロゴ">
-					
-					<div style="font-size: 11px; line-height: 1.6;">
-						9013196001Y37019<br>
-						9026286001Y38029<br>
-						9026286002Y37019
-					</div>
+					<img src="./images/jasrac-221058400b8360a7944e393747817f10.png" alt="">
+					<!-- <img src="./images/jasrac1.gif" alt=""> -->
+					<!-- <img src="./images/jasrac2.gif" alt=""> -->
+					<span style="font-size:11px;">9013196001Y37019<br></span>
+					<span style="font-size:11px;">9026286001Y38029<br></span>
+					<span style="font-size:11px;">9026286002Y37019<br></span>
 				</div>
 
-				<!-- NexTone許諾番号表示 -->
-				<div id="nextone" class="jas">
+				<div id="jas">
 					<p><b>NexTone許諾番号</b></p>
-					<img src="./images/nextone-96984dd07b164ad8b950f9e129d3be3a.png" alt="NexToneロゴ">
-					
-					<div style="font-size: 11px; line-height: 1.6;">
-						ID000003241<br>
-						ID000005789<br>
-						ID000006472
-					</div>
+					<img src="./images/nextone-96984dd07b164ad8b950f9e129d3be3a.png" alt="">
+					<span style="font-size:11px;">ID000003241<br></span>
+					<span style="font-size:11px;">ID000005789<br></span>
+					<span style="font-size:11px;">ID000006472<br></span>
 				</div>
-				<!-- //著作権管理団体エリア終了 -->
+				<!-- //JAS -->
 
-			</main>
-			<!-- //main（メインコンテンツエリア終了） -->
+				<!-- amazon -->
+				<!-- <div class="amazon"> -->
+				<!-- 	<script type="text/javascript">amzn_assoc_ad_type ="responsive_search_widget"; amzn_assoc_tracking_id ="yamarock01-22"; amzn_assoc_marketplace ="amazon"; amzn_assoc_region ="JP"; amzn_assoc_placement =""; amzn_assoc_search_type = "search_widget";amzn_assoc_width ="auto"; amzn_assoc_height ="auto"; amzn_assoc_default_search_category =""; amzn_assoc_default_search_key ="";amzn_assoc_theme ="light"; amzn_assoc_bg_color ="FFFFFF"; </script><script src="//z-fe.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&Marketplace=JP"></script> -->
+				<!-- </div> -->
+				<!-- //amazon -->
+				
+			</div>
+			<!-- //main -->
 
-			<!-- ==========================================
-				サイドバーエリア（画面の横に表示される補足領域）
-			========================================== -->
+			<!-- side -->
 			<div id="side">
 
-				<h2><img src="./images/art_001.png" alt="アーティストアイコン"> アーティスト一覧</h2>
+				<h2><img src="./images/art_001.png" alt=""> アーティスト一覧</h2>
 
-				<!-- アーティストリストの読み込みエリア -->
+				<!-- artistlist -->
 				<div id="artistlist">
 					<ul>
-						<li id="loadlist">
-							<a href="./artist.html">
-								アーティスト一覧の読み込みに失敗しました。<br>
+						<div id="loadlist">
+							<a href="./artist.html">アーティスト一覧の読み込みに失敗しました。<br>
 								JavaScriptが使用できるようブラウザ設定を変更してリロード(再読み込み)してください。<br>
 								または、この文字をクリックしてアーティスト一覧ページへジャンプすることもできます。
 							</a>
-						</li>
+						</div>
 					</ul>
 				</div>
 
 			</div>
-			<!-- サイドバーエリア終了 -->
+			<!-- //side -->
 
 			<!-- pagetop -->
 			<p id="pagetop"><a href="#wrap">TOP ▲</a></p>
