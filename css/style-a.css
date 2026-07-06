@@ -69,8 +69,57 @@ smallbox
 	margin-bottom: 0px;													/*余白外*/
 }
 
-.smallbox li:last-child {
-	margin-bottom:	20px;												/*余白外*/	
+/* 文字ジャケットが使われた場合も、画像と同じ位置・サイズで左側に配置 */
+.smallbox li .score-jacket {
+	float: left !important;
+	width: 75px !important;
+	height: 75px !important;
+	margin-bottom: 0px;
+}
+
+
+
+/*-------------------------------------------------------------------------
+文字ジャケット共通基本スタイル（横長リスト用に文字サイズを最適化）
+---------------------------------------------------------------------------*/
+.score-jacket {
+	background: #333333;
+	color: #ffffff;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-align-items: center;
+	align-items: center;
+	text-align: center;
+	padding: 5px;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	border-radius: 4px;
+}
+
+.score-jacket .jacket-artist {
+	font-size: 9px;
+	font-weight: bold;
+	color: #dc143c;
+	line-height: 1.2;
+	margin-bottom: 2px;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	overflow: hidden;
+}
+
+.score-jacket .jacket-song {
+	font-size: 10px;
+	font-weight: bold;
+	line-height: 1.2;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
 }
 
 
@@ -123,5 +172,3 @@ sets
   content: "kkkkkkkkk";
 }
 *******************************************************/
-
-

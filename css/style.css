@@ -271,6 +271,13 @@ largebox
 	padding: 10px 10px 10px 10px;								/*余白内*/	
 }
 
+/* 【解説】文字ジャケット（大）のサイズとデザインを設定 */
+.largebox li .score-jacket {
+	width: 148px;												/*幅*/
+	height: 148px;												/*高さ*/
+	margin-bottom: 10px;										/*下マージン*/
+}
+
 .largebox li img {
 	width: 148px;												/*幅*/
 	height: 148px;												/*高さ*/
@@ -294,6 +301,13 @@ middlebox
 	padding: 4px 4px 10px 4px;									/*余白内*/	
 }
 
+/* 【解説】文字ジャケット（中）のサイズとデザインを設定 */
+.middlebox li .score-jacket {
+	width: 129px;												/*幅*/
+	height: 129px;												/*高さ*/
+	margin-bottom: 4px;											/*下マージン*/
+}
+
 .middlebox li img {
 	width: 129px;												/*幅*/
 	height: 129px;												/*高さ*/
@@ -302,6 +316,48 @@ middlebox
 
 .middlebox li:last-child {
 	margin-bottom:	20px;										/*余白外*/	
+}
+
+
+
+/*-------------------------------------------------------------------------
+【新設】文字ジャケット（score-jacket）の共通共通デザイン
+---------------------------------------------------------------------------*/
+.score-jacket {
+	background: #333333;										/*ジャケットの背景色（引き締まるダークグレー）*/
+	color: #ffffff;												/*文字の色（白）*/
+	display: flex;												/*縦横中央寄せの魔法の配置*/
+	flex-direction: column;										/*上から下に並べる*/
+	justify-content: center;									/*上下の中央寄せ*/
+	align-items: center;										/*左右の中央寄せ*/
+	text-align: center;											/*文字のセンタリング*/
+	padding: 10px;												/*内側の余白*/
+	box-sizing: border-box;										/*サイズ計算を狂わせない設定*/
+	border-radius: 4px;											/*ほんの少し角を丸くしてオシャレに*/
+}
+
+/* ジャケット内のアーティスト名 */
+.score-jacket .jacket-artist {
+	font-size: 11px;											/*少し小さめに*/
+	font-weight: bold;											/*太字*/
+	color: #dc143c;												/*yamarockカラーの赤をアクセントに*/
+	line-height: 1.3;											/*行間*/
+	margin-bottom: 4px;											/*曲名との隙間*/
+	display: -webkit-box;										/*文字溢れ対策*/
+	-webkit-box-orient: vertical;								/*文字溢れ対策*/
+	-webkit-line-clamp: 1;										/*1行を超えたら自動で「…」にする*/
+	overflow: hidden;											/*はみ出しを隠す*/
+}
+
+/* ジャケット内の曲名 */
+.score-jacket .jacket-song {
+	font-size: 13px;											/*主役なので少し大きめ*/
+	font-weight: bold;											/*太字*/
+	line-height: 1.3;											/*行間*/
+	display: -webkit-box;										/*文字溢れ対策*/
+	-webkit-box-orient: vertical;								/*文字溢れ対策*/
+	-webkit-line-clamp: 2;										/*2行を超えたら自動で「…」にする*/
+	overflow: hidden;											/*はみ出しを隠す*/
 }
 
 
@@ -321,6 +377,7 @@ span style
 	text-align: center;											/*表示位置*/
 	font-weight: bold;											/*太字*/
 	border: 1px solid #ffffff;									/*枠線*/
+	z-index: 2;													/*【追加】ジャケット画像の上に文字が被るように前面へ配置*/
 }
 
 .point1 {
@@ -462,9 +519,10 @@ span style
 
 
 /*-------------------------------------------------------------------------
-#SNS #JAS
+#SNS .jas
 ---------------------------------------------------------------------------*/
-#sns , #jas {
+/* 【修正】#jas から .jas（共通クラス名）に変更し、JASRAC・NexToneの両方にデザインが効くようにしました */
+#sns , .jas {
 	clear: both;											/*回り込み解除*/
 	padding: 10px 0px 10px 10px;							/*余白*/
 	margin: 20px 10px 10px 0px;								/*余白*/
@@ -483,7 +541,8 @@ span style
 	height: 32px;												/*高さ*/
 }
 
-#jas img {
+/* 【修正】こちらも #jas img から .jas img に変更しました */
+.jas img {
 	float: left;												/*フロート*/
 	width: 50px;												/*幅*/
 	height: 50px;												/*高さ*/
@@ -538,26 +597,6 @@ footer a {
 
 
 
-
-/*-------------------------------------------------------------------------
-▼▼テスト専用▼▼
----------------------------------------------------------------------------*/
-
-/*******************************************************
-ターゲットliの上に文字を入れることには成功したが
-アンカーリンクを使って飛んでくるとソートが効かなくなる
-固定ヘッダ分のズレもうまく対処できていない
-いったん保留
-
-:target::before {
-  content: "kkkkkkkkk";
-}
-*******************************************************/
-
-
-
-
-
 /*-------------------------------------------------------------------------
 faq
 ---------------------------------------------------------------------------*/
@@ -573,6 +612,3 @@ faq
 	color: #000000;											/*フォント*/
 	padding: 4px 0px 4px 0px;								/*余白*/
 }
-
-
-
