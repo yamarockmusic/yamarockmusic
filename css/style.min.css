@@ -673,16 +673,35 @@ boxcontents ボックス型コンテンツ共通
 	float: none;												/*フロート解除*/
 }
 
-.boxcontents ul li a{
-	width: auto;												/*幅*/
-	height: 87px;												/*高さ*/
-	margin: 0px 10px 0px 0px;									/*余白外*/	
-	padding: 10px 0px 0px 10px;									/*余白内*/	
-	border-top: none;											/*枠線*/
-	border-right: none;											/*枠線*/
-	border-left: none;											/*枠線*/
-	border-bottom: 1px solid #dcdcdc;							/*枠線*/
-}
+/* リンク要素をflexにして横並びの土台を作る */
+    .boxcontents ul li a {
+        display: flex !important;
+        align-items: center; /* 縦方向の中央に揃える */
+        height: auto !important;
+        padding: 10px;
+    }
+
+    /* ジャケット部分を左側に固定 */
+    .score-jacket {
+        flex: 0 0 75px; /* ここでサイズを固定 */
+        height: 75px;
+        margin-right: 10px;
+        margin-bottom: 0px !important;
+    }
+
+    /* ！！ここがポイント！！ */
+    /* ジャケット以外のテキスト要素を「右側のエリア」として1つの塊にする */
+    .boxcontents ul li a {
+        flex-direction: row; /* 横並びの開始 */
+    }
+    
+    /* テキスト要素を縦並びにするためのラッパー指定 */
+    /* ※HTMLを触らないため、擬似的にflex-item化させる */
+    .boxcontents ul li a > span, 
+    .boxcontents ul li a > div:not(.score-jacket) {
+        display: block; /* 改行させることで、テキストを縦並びにする */
+        flex: 1;        /* 残りのスペースを埋める */
+    }
 
 /* ◆2026/07画像要素を一切無くすなら不要になるが今は残しておく */
 .boxcontents ul li img{
@@ -690,30 +709,6 @@ boxcontents ボックス型コンテンツ共通
 	width: 75px;												/*幅*/
 	height: 75px;												/*縦*/
 	margin-bottom: 0px;											/*余白外*/
-}
-
-
-
-/*-------------------------------------------------------------------------
-largebox ボックス（大）インデックスページのNEW
----------------------------------------------------------------------------*/
-/* ◆2026/07追加 */
-.largebox li .score-jacket {
-	width: 75px;												/*幅*/
-	height: 75px;												/*高さ*/
-	margin-bottom: 0px;											/*下マージン*/
-}
-
-
-
-/*-------------------------------------------------------------------------
-middlebox ボックス（中）インデックスページのランキング
----------------------------------------------------------------------------*/
-/* ◆2026/07追加 */
-.middlebox li .score-jacket {
-	width: 75px;												/*幅*/
-	height: 75px;												/*高さ*/
-	margin-bottom: 0px;											/*下マージン*/
 }
 
 
