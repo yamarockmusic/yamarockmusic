@@ -1,108 +1,133 @@
-﻿<!DOCTYPE html>
-<html lang="ja">
-	<head>
-		<meta charset="utf-8">
+﻿<!doctype html>
+	<html lang="ja">
 	
-		<!-- タイトル / キーワード設定 -->
-		<title>yamarockmusic バンドスコア｜TAB譜｜楽譜 販売</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- スマホ表示を綺麗にする設定 -->
-		<meta name="copyright" content="yamarockmusic">
-		<meta name="description" content="yamarockmusic バンドスコア｜TAB譜｜楽譜 販売">
-		<meta name="keywords" content="ギター,TAB,スコア,初心者">
-	
-		<!-- お気に入りアイコン（ファビコン） -->
-		<link rel="icon" href="./favicon.ico"> <!-- ブラウザのタブに表示されるアイコン -->
-		<link rel="apple-touch-icon" href="./images/webclip.png"> <!-- スマホのホーム画面用のアイコン -->
-	
-		<!-- OGP（LINEやSNSでシェアされた時の設定） -->
-		<meta property="og:locale" content="ja_JP">
-		<meta property="og:title" content="yamarockmusic [ヤマロック ミュージック]">
-		<meta property="og:type" content="article">
-		<meta property="og:description" content="1曲から購入できる楽譜配信サイト">
-		<meta property="og:url" content="https://yamarockmusic.github.io/yamarockmusic/">
-		<meta property="og:image" content="https://yamarockmusic.github.io/yamarockmusic/images/ogp01.jpg">
-		
-		<!-- Twitter・X専用のシェア設定 -->
-		<meta name="twitter:card" content="summary"> <!-- 小さな画像と文字のカード形式で表示 -->
-		<meta name="twitter:site" content="@yamarockmusic">
-	
-		<!-- CSS読み込み -->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- スマホ表示用設定 (Viewport) -->
-		<link rel="stylesheet" href="./css/style.min.css">
-	
-		<!-- jQuery読み込み -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-	
-		<!-- Smooth Scroll JS（画面のスムーズスクロール） -->
-		<script src="./js/smoothscroll.js"></script>
-	
-		<!-- pagetop JS（トップへ戻るボタンの制御） -->
-		<script src="./js/pagetop.js"></script>
-	
-		<!-- loadlist JS（サイドバーのアーティスト一覧自動読み込み） -->
-		<script>
-			$(function(){
-				$('#loadlist').load('./artist.html #artlist');
-			});
-		</script>
-	</head>
+		<!-- ==========================================
+			ヘッダエリア 開始
+		============================================ -->
+		<head>
+			<meta charset="utf-8">
 
-	<!-- ==========================================
-		画面の表示エリア開始
-	========================================== -->
-	<body>
+			<!-- タイトル / キーワード設定 -->
+			<title>yamarockmusic バンドスコア｜TAB譜｜楽譜 販売</title>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- スマホ表示を綺麗にする設定 -->
+			<meta name="copyright" content="yamarockmusic">
+			<meta name="description" content="yamarockmusic バンドスコア｜TAB譜｜楽譜 販売">
+			<meta name="keywords" content="ギター,TAB,スコア,初心者">
 
-		<!-- サイト全体を包む外枠の箱（全体の横幅や中央寄せをコントロール） -->
-		<div id="container">
+			<!-- お気に入りアイコン（ファビコン） -->
+			<link rel="icon" href="./favicon.ico"> <!-- ブラウザのタブに表示されるアイコン -->
+			<link rel="apple-touch-icon" href="./images/webclip.png"> <!-- スマホのホーム画面用のアイコン -->
 
-			<!-- ==========================================
-				ヘッダーエリア（サイトの看板・共通メニュー部分）
-			========================================== -->
-			<header id="header">
-				<h1>バンドスコア｜TAB譜｜楽譜 ダウンロード配信サイト</h1>
+			<!-- OGP（LINEやSNSでシェアされた時の設定） -->
+			<meta property="og:locale" content="ja_JP">
+			<meta property="og:title" content="yamarockmusic [ヤマロック ミュージック]">
+			<meta property="og:type" content="article">
+			<meta property="og:description" content="1曲から購入できる楽譜配信サイト">
+			<meta property="og:url" content="https://yamarockmusic.github.io/yamarockmusic/">
+			<meta property="og:image" content="https://yamarockmusic.github.io/yamarockmusic/images/ogp01.jpg">
+
+			<!-- Twitter・X専用のシェア設定 -->
+			<meta name="twitter:card" content="summary"> <!-- 小さな画像と文字のカード形式で表示 -->
+			<meta name="twitter:site" content="@yamarockmusic">
+	
+			<!-- CSS読み込み -->
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- スマホ表示用設定 (Viewport) -->
+			<link rel="stylesheet" href="./css/style.min.css">
+
+			<!-- jQuery読み込み -->
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+			<!-- layzr JS *jsフォルダに本体も入っている とりあえずcdnjsから読込 ver2.xx系はうまく動作しない 原因不明 -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/layzr.js/1.4.3/layzr.min.js"></script>
+
+				<!-- Smooth Scroll JS（画面のスムーズスクロール） -->
+			<script src="./js/smoothscroll.js"></script>
+	
+			<!-- pagetop JS（トップへ戻るボタンの制御） -->
+			<script src="./js/pagetop.js"></script>
+	
+			<!-- loadlist JS（サイドバーのアーティスト一覧自動読み込み） -->
+			<script>
+				$(function(){
+					$('#loadlist').load('./artist.html #artlist');
+				});
+			</script>
+
+			<!-- FAQページ用 折りたたみ JS -->
+			<script language=javascript>
+				function show(inputData) {
+					var objID=document.getElementById( "layer_" + inputData );
+					var buttonID=document.getElementById( "category_" + inputData );
+					if(objID.className=='close') {
+						objID.style.display='block';
+						objID.className='open';
+					}else{
+						objID.style.display='none';
+						objID.className='close';
+					}
+				}
+			</script>
+
+		</head>
+
+		<!-- ==========================================
+			画面の表示エリア 開始
+		============================================ -->
+		<body>
+
+			<!-- コンテナ開始 -->
+			<div id="container">
+
+		<!-- ==========================================
+			メインコンテンツ内のヘッダエリア(上部メニュー) 開始
+		============================================ -->
+				<header id="header">
 				
-				<!-- サイトのロゴマーク（クリックするとトップページへ戻るリンク） -->
-				<div id="logo">
-					<a href="./index.html">
-						<img src="./images/logo_600x245.png" width="122" height="50" alt="yamarockmusic ロゴ">
-					</a>
-				</div>
+					<h1>バンドスコア｜TAB譜｜楽譜 ダウンロード配信サイト</h1>
 				
-				<!-- メインのナビゲーションメニュー -->
-				<nav id="menu-box">
-					<ul>
-						<li><a href="./index.html">TOP</a></li>
-						<li><a href="./artist.html">楽譜一覧</a></li>
-						<li><a href="./faq.html">FAQ</a></li>
-						<li id="current"><a href="#">Contact</a></li> <!-- 現在表示しているページ（楽譜一覧） -->
-					</ul>
-				</nav>
-			</header>
-			<!--// ヘッダーエリア終了 -->
+					<!-- ロゴマーク（クリックするとトップページへ戻るリンク） -->
+					<div id="logo">
+						<a href="./index.html">
+							<img src="./images/logo_600x245.png" width="122" height="50" alt="yamarockmusic ロゴ">
+						</a>
+					</div>
+				
+					<!-- メインのナビゲーションメニュー -->
+					<nav id="menu-box">
+						<ul>
+							<li><a href="./index.html">TOP</a></li>
+							<li><a href="./artist.html">楽譜一覧</a></li>
+							<li><a href="./faq.html">FAQ</a></li> 
+							<li id="current"><a href="#">Contact</a></li><!-- 現在表示しているページ（FAQ） -->
+						</ul>
+					</nav>
+					
+				</header>
+				<!--// ヘッダーエリア終了 -->
 
-			<!-- ==========================================
-				パンくずリスト（現在地を示すナビ）
-				※Googleの最新ルール（schema.org）に対応させています
-			========================================== -->
-			<ul id="syncer-brcb">
-				<li itemscope itemtype="https://schema.org/ListItem">
-					<a href="./index.html" itemprop="item">
-						<span itemprop="name">TOP</span>
-					</a>
-					<meta itemprop="position" content="1">
-				</li>
-				<li itemscope itemtype="https://schema.org/ListItem">
-					<a href="#" itemprop="item">
-						<span itemprop="name">Contact</span>
-					</a>
-					<meta itemprop="position" content="2">
-				</li>
-			</ul>
+				<!-- ==========================================
+					パンくずリスト（現在地を示すナビ）
+					※Googleの最新ルール（schema.org）に対応させています
+				========================================== -->
+				<ul id="syncer-brcb">
+					<li itemscope itemtype="https://schema.org/ListItem">
+						<a href="./index.html" itemprop="item">
+							<span itemprop="name">TOP</span>
+						</a>
+						<meta itemprop="position" content="1">
+					</li>
+					<li itemscope itemtype="https://schema.org/ListItem">
+						<a href="#" itemprop="item">
+							<span itemprop="name">Contact</span>
+						</a>
+						<meta itemprop="position" content="2">
+					</li>
+				</ul>
 
 			<!-- ==========================================
 				メインコンテンツエリア開始
 			========================================== -->
-			<main id="main">
+				<main id="main">
 
 				<h2><img src="./images/1467097393_logout.png" alt=""> Contact</h2>
 
@@ -112,99 +137,102 @@
 				<br>
 				<div align="center"><< クリックでお問い合わせフォームが開きます >></div>
 
-				<!-- フォームズのメールフォーム[https://www.formzu.com/] -->
+				<!-- フォームズのメールフォーム[http://www.formzu.com/] -->
 				<div align="center">
-					<a href="https://ws.formzu.net/fgen/S88014643/" style="display:block; text-align:center; width:150px; height:35px; background: url(./images/btn_01.png); no-repeat; text-decoration: none" target="_blank">
+					<a href="http://ws.formzu.net/fgen/S88014643/" style="display:block; text-align:center; width:150px; height:35px; background: url(./images/btn_01.png); no-repeat; text-decoration: none" target="_blank">
 						<font color="#FFFFFF"><span style="vertical-align:-4px;"><b>お問い合わせ</b></span></font>
 					</a>
 				</div>
 
-				<!-- ==========================================
-					SNSシェアボタンエリア（LINE・X）
-				========================================== -->
-				<div id="sns">
-					<p><b>ページを共有</b></p>
-					
-					<!-- LINE用シェアボタン -->
-					<a href="https://line.me/R/msg/text/?yamarockmusic%20https%3A%2F%2Fyamarockmusic.github.io%2Fyamarockmusic%2F" target="_blank" rel="noopener noreferrer">
-						<img src="./images/linebutton_20x20.png" alt="LINEで送る">
-					</a>
-					
-					<!-- X（旧Twitter）用シェアボタン -->
-					<a href="https://x.com/intent/tweet?text=yamarockmusic%20-%20バンドスコア%20TAB譜%20楽譜サイト&url=https%3A%2F%2Fyamarockmusic.github.io%2Fyamarockmusic%2F" target="_blank" rel="noopener noreferrer">
-						<img src="./images/twitter_color_32px.png" alt="Xでシェア">
-					</a>
-				</div>
-				<!-- //SNSシェアボタンエリア終了 -->
-				
-				<!-- ==========================================
-					著作権管理団体（JASRAC / NexTone）許諾番号エリア
-				========================================== -->
-				
-				<!-- JASRAC許諾番号表示 -->
-				<div id="jasrac" class="jas">
-					<p><b>JASRAC許諾番号</b></p>
-					<img src="./images/jasrac-221058400b8360a7944e393747817f10.png" alt="JASRACロゴ">
-					
-					<div style="font-size: 11px; line-height: 1.6;">
-						9013196001Y37019<br>
-						9026286001Y38029<br>
-						9026286002Y37019
+					<!-- ==========================================
+						SNSシェアボタンエリア（LINE・X）
+					========================================== -->
+					<div id="sns">
+						<p><b>ページを共有</b></p>
+						
+						<!-- LINE用シェアボタン -->
+						<a href="https://line.me/R/msg/text/?yamarockmusic%20https%3A%2F%2Fyamarockmusic.github.io%2Fyamarockmusic%2F" target="_blank" rel="noopener noreferrer">
+							<img src="./images/linebutton_20x20.png" alt="LINEで送る">
+						</a>
+						
+						<!-- X（旧Twitter）用シェアボタン -->
+						<a href="https://x.com/intent/tweet?text=yamarockmusic%20-%20バンドスコア%20TAB譜%20楽譜サイト&url=https%3A%2F%2Fyamarockmusic.github.io%2Fyamarockmusic%2F" target="_blank" rel="noopener noreferrer">
+							<img src="./images/twitter_color_32px.png" alt="Xでシェア">
+						</a>
 					</div>
-				</div>
-
-				<!-- NexTone許諾番号表示 -->
-				<div id="nextone" class="jas">
-					<p><b>NexTone許諾番号</b></p>
-					<img src="./images/nextone-96984dd07b164ad8b950f9e129d3be3a.png" alt="NexToneロゴ">
+					<!-- //SNSシェアボタンエリア終了 -->
+				
+					<!-- ==========================================
+						著作権管理団体（JASRAC / NexTone）許諾番号エリア
+					========================================== -->
 					
-					<div style="font-size: 11px; line-height: 1.6;">
-						ID000003241<br>
-						ID000005789<br>
-						ID000006472
+					<!-- JASRAC許諾番号表示 -->
+					<div id="jasrac" class="jas">
+						<p><b>JASRAC許諾番号</b></p>
+						<img src="./images/jasrac-221058400b8360a7944e393747817f10.png" alt="JASRACロゴ">
+						
+						<div style="font-size: 11px; line-height: 1.6;">
+							9013196001Y37019<br>
+							9026286001Y38029<br>
+							9026286002Y37019
+						</div>
 					</div>
-				</div>
-				<!-- //著作権管理団体エリア終了 -->
+	
+					<!-- NexTone許諾番号表示 -->
+					<div id="nextone" class="jas">
+						<p><b>NexTone許諾番号</b></p>
+						<img src="./images/nextone-96984dd07b164ad8b950f9e129d3be3a.png" alt="NexToneロゴ">
+						
+						<div style="font-size: 11px; line-height: 1.6;">
+							ID000003241<br>
+							ID000005789<br>
+							ID000006472
+						</div>
+					</div>
+					<!-- //著作権管理団体エリア終了 -->
+	
+				</main>
+				<!-- //main（メインコンテンツエリア終了） -->
 
-			</main>
-			<!-- //main（メインコンテンツエリア終了） -->
+				<!-- ==========================================
+					サイドバーエリア（画面の横に表示される補足領域）
+				========================================== -->
+				<aside id="side">
 
-			<!-- ==========================================
-				サイドバーエリア（画面の横に表示される補足領域）
-			========================================== -->
-			<aside id="side">
+					<h2><img src="./images/art_001.png" alt="アーティストアイコン"> アーティスト一覧</h2>
 
-				<h2><img src="./images/art_001.png" alt="アーティストアイコン"> アーティスト一覧</h2>
+					<!-- アーティストリストの読み込みエリア -->
+					<div id="artistlist">
+						<ul>
+							<li id="loadlist">
+								<a href="./artist.html">
+									アーティスト一覧の読み込みに失敗しました。<br>
+									JavaScriptが使用できるようブラウザ設定を変更してリロード(再読み込み)してください。<br>
+									または、この文字をクリックしてアーティスト一覧ページへジャンプすることもできます。
+								</a>
+							</li>
+						</ul>
+					</div>
+		
+				</aside>
+				<!-- //side（サイドバーエリア終了） -->
 
-				<!-- アーティストリストの読み込みエリア -->
-				<div id="artistlist">
-					<ul>
-						<li id="loadlist">
-							<a href="./artist.html">
-								アーティスト一覧の読み込みに失敗しました。<br>
-								JavaScriptが使用できるようブラウザ設定を変更してリロード(再読み込み)してください。<br>
-								または、この文字をクリックしてアーティスト一覧ページへジャンプすることもできます。
-							</a>
-						</li>
-					</ul>
-				</div>
+				<!-- ページトップへ戻るボタン -->
+				<p id="pagetop"><a href="#">TOP ▲</a></p>
 
-			</aside>
-			<!-- //side（サイドバーエリア終了） -->
-
-			<!-- ページトップへ戻るボタン -->
-			<p id="pagetop"><a href="#">TOP ▲</a></p>
-
-			<!-- フッターエリア（著作権表記） -->
-			<footer>
-				<small>Copyright &copy; 2015-2026 <a href="./index.html"><b>yamarock music</b></a> All Rights Reserved.</small>
-			</footer>
+				<!-- フッターエリア（著作権表記） -->
+				<footer>
+					<small>Copyright &copy; 2015 <a href="./index.html"><b>yamarock music</b></a> All Rights Reserved.</small>
+				</footer>
 			
-		</div>
-		<!-- //container（外枠の箱終了） -->
+			</div>
+			<!-- //container（外枠の箱終了） -->
+
+<!-- ******************************************* -->
 
 		<!-- ==========================================
 			画像リンク切れ対策プログラム（jQuery）
+			リンク切れ時にはNo Image画像を入れる
 		========================================== -->
 		<script>
 			$(function () {
@@ -218,6 +246,9 @@
 		</script>
 		<!-- //画像リンク切れ対策終了 -->
 
+		<!-- layzr JS -->
+		<script type="text/javascript">var layzr = new Layzr();</script>
+
 		<!-- ==========================================
 			JavaScriptが無効な環境への案内メッセージ
 		========================================== -->
@@ -227,4 +258,7 @@
 		<!-- //noscript終了 -->
 
 	</body>
+	<!-- //body -->
+
 </html>
+<!-- //html -->
