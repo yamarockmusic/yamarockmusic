@@ -673,35 +673,32 @@ boxcontents ボックス型コンテンツ共通
 	float: none;												/*フロート解除*/
 }
 
-/* リンク要素をflexにして横並びの土台を作る */
+/* リスト要素を横並びの土台にする */
     .boxcontents ul li a {
         display: flex !important;
-        align-items: center; /* 縦方向の中央に揃える */
+        align-items: flex-start; /* 縦方向は上揃え */
         height: auto !important;
         padding: 10px;
     }
 
-    /* ジャケット部分を左側に固定 */
+    /* ジャケットのサイズを固定 */
     .score-jacket {
-        flex: 0 0 75px; /* ここでサイズを固定 */
+        flex: 0 0 75px; 
         height: 75px;
         margin-right: 10px;
         margin-bottom: 0px !important;
     }
 
-    /* ！！ここがポイント！！ */
-    /* ジャケット以外のテキスト要素を「右側のエリア」として1つの塊にする */
-    .boxcontents ul li a {
-        flex-direction: row; /* 横並びの開始 */
+    /* 文字列（span等）を右側に縦並びで表示するための設定 */
+    /* これにより、spanなどの個別の要素が勝手に横に並ばず、縦に積み重なります */
+    .boxcontents ul li a span, 
+    .boxcontents ul li a .artname, 
+    .boxcontents ul li a .al {
+        display: block !important; /* 強制的にブロック要素化 */
+        text-align: left;
+        margin-left: 0 !important; /* 元のCSSの余白をリセットして揃える */
     }
-    
-    /* テキスト要素を縦並びにするためのラッパー指定 */
-    /* ※HTMLを触らないため、擬似的にflex-item化させる */
-    .boxcontents ul li a > span, 
-    .boxcontents ul li a > div:not(.score-jacket) {
-        display: block; /* 改行させることで、テキストを縦並びにする */
-        flex: 1;        /* 残りのスペースを埋める */
-    }
+}
 
 /* ◆2026/07画像要素を一切無くすなら不要になるが今は残しておく */
 .boxcontents ul li img{
