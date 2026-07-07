@@ -682,16 +682,6 @@ boxcontents ボックス型コンテンツ共通
 	border-right: none;											/*枠線*/
 	border-left: none;											/*枠線*/
 	border-bottom: 1px solid #dcdcdc;							/*枠線*/
-
-
-		display: flex;          /* 左右に並べる */
-        align-items: center;    /* 縦方向の中央寄せ */
-        width: auto;
-        height: auto;           /* 高さを自動にして伸び縮みさせる */
-        padding: 10px;
-
-
-
 }
 
 /* ◆2026/07画像要素を一切無くすなら不要になるが今は残しておく */
@@ -701,26 +691,6 @@ boxcontents ボックス型コンテンツ共通
 	height: 75px;												/*縦*/
 	margin-bottom: 0px;											/*余白外*/
 }
-
-
-
-/*-------------------------------------------------------------------------
-【2026/07追加】画像利用を廃止・ジャケット用のデザイン
----------------------------------------------------------------------------*/
-.score-jacket {
-        width: 75px;
-        height: 75px;
-        margin-right: 10px;     /* 文字との間に隙間を作る */
-        margin-bottom: 0px;
-    }
-
-/* 文字情報全体を右側の余ったスペースに配置 */
-    /* spanタグなどのテキストをグループとして扱う設定 */
-    .boxcontents ul li a > :not(.score-jacket) {
-        display: flex;
-        flex-direction: column;
-        flex: 1;                /* 右側の幅を最大限使う */
-    }
 
 /*-------------------------------------------------------------------------
 smallbox
