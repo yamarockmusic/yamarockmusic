@@ -685,7 +685,7 @@ boxcontents ボックス型コンテンツ共通
 }
 
 /* ◆2026/07画像要素を一切無くすなら不要になるが今は残しておく */
-.boxcontents ul li img{
+.boxcontents ul li .score-jacket{
 	float: left;												/*フロート*/
 	width: 75px;												/*幅*/
 	height: 75px;												/*縦*/
