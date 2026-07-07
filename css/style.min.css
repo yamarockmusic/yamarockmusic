@@ -17,7 +17,7 @@ body {
 }
 
 /*-- その他の要素 --*/
-h1,p,ul,ol,li,dl,dt,dd,figure{
+h1,h3,h4,h5,p,ul,ol,li,dl,dt,dd,form,figure{
 	margin: 0px;											/*余白 外側*/
 	padding: 0px;											/*余白 内側*/
 }
@@ -44,15 +44,15 @@ h1 {
 	font-weight:normal;										/*フォント*/
 }
 
-/*-- メインコンテンツ内見出し --*/
-h2 {
-	margin: 0px 10px 10px 0px;								/*余白外*/	
-	padding: 4px 0px;										/*余白 内*/
-	border-top: 3px solid #dc143c;							/*枠線*/
-	border-bottom: 3px solid #dc143c;						/*枠線*/
-	clear: both;											/*フロート解除*/
-	vertical-align: middle;									/*縦位置*/
-	font-size: 14px;										/*フォント*/
+/*-- メインコンテンツ内見出し（h4は不明。使っていないかもしれない） --*/
+h2 , h4 {
+	margin: 0px 10px 10px 0px;							/*余白外*/	
+	padding: 4px 0px;									/*余白 内*/
+	border-top: 3px solid #dc143c;						/*枠線*/
+	border-bottom: 3px solid #dc143c;					/*枠線*/
+	clear: both;										/*フロート解除*/
+	vertical-align: middle;								/*縦位置*/
+	font-size: 14px;									/*フォント*/
 }
 
 /*-- メインコンテンツ内見出しの画像要素 --*/
@@ -62,6 +62,16 @@ h2 img {
 	width: 26px;											/*幅*/
 }
 
+/*-- あ行・か行・さ行などの文字 --*/
+h3 {
+	clear: both;										/*フロート解除*/
+	margin: 10px 10px 5px 0px;							/*余白外*/	
+	padding: 0px 0px 0px 10px;							/*余白 内*/
+	background-color: #dcdcdc;							/*背景色*/
+	font-size: 10px;									/*フォント*/
+	color:#000000;										/*フォント*/
+	font-weight:bold;									/*太*/
+}
 
 
 /*-------------------------------------------------------------------------
