@@ -673,32 +673,15 @@ boxcontents ボックス型コンテンツ共通
 	float: none;												/*フロート解除*/
 }
 
-/* リンク全体をflexレイアウトにし、画像とテキストを分離 */
-    .boxcontents ul li a {
-        display: flex !important;
-        flex-direction: row !important; /* 横並びを強制 */
-        align-items: flex-start !important;
-        height: auto !important;
-        padding: 10px !important;
-    }
-
-    /* 左側のジャケット（画像代わりの箱） */
-    .score-jacket {
-        flex: 0 0 75px !important; /* 絶対に崩れない幅 */
-        margin-right: 10px !important;
-    }
-
-    /* 右側のテキストエリアを強制的に縦に並べる */
-    .boxcontents ul li a > span, 
-    .boxcontents ul li a > .scorelevel, 
-    .boxcontents ul li a > .artname, 
-    .boxcontents ul li a > .al,
-    .boxcontents ul li a > .explanation {
-        display: block !important; /* 全部ブロック要素にして縦に積む */
-        width: 100% !important;
-        flex: 1 !important;
-        margin-left: 0 !important;
-    }
+.boxcontents ul li a{
+	width: auto;												/*幅*/
+	height: 87px;												/*高さ*/
+	margin: 0px 10px 0px 0px;									/*余白外*/	
+	padding: 10px 0px 0px 10px;									/*余白内*/	
+	border-top: none;											/*枠線*/
+	border-right: none;											/*枠線*/
+	border-left: none;											/*枠線*/
+	border-bottom: 1px solid #dcdcdc;							/*枠線*/
 }
 
 /* ◆2026/07画像要素を一切無くすなら不要になるが今は残しておく */
