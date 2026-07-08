@@ -105,8 +105,6 @@ h3 {
 	padding-left: 200%;										/*ネガティブマージンの相殺*/
 	padding-right: 200%;									/*ネガティブマージンの相殺*/
 	box-shadow: 0px 0px 15px rgba(0,0,0,0.7);				/*影*/
-		-moz-box-shadow: 0px 0px 15px rgba(0,0,0,0.7);		/*同上*/  
-		-webkit-box-shadow: 0px 0px 15px rgba(0,0,0,0.7);	/*同上*/
 	z-index: 10;											/*z-index*/
 }
 
@@ -235,10 +233,7 @@ boxcontents ボックス型コンテンツ 共通
 	text-decoration: none;										/*リンク下線消し*/
 	background-color: #ffffff;									/*背景色*/
 	overflow: hidden;											/*はみ出し非表示*/
-	-webkit-transition: 0.2s ease-in-out;						/*アニメーション速度*/
-		-moz-transition: 0.2s ease-in-out;						/*同上*/
-		-o-transition: 0.2s ease-in-out;						/*同上*/
-		transition: 0.2s ease-in-out;							/*同上*/
+	transition: 0.2s ease-in-out;								/*アニメーション速度*/
 	box-shadow: 0px 0px 8px 0.5px #dcdcdc;						/*影*/
 	border: 1px solid #dcdcdc;									/*枠線*/
 	color: #000000;												/*文字色*/
@@ -456,12 +451,8 @@ span style 初級・中級などのレベル表示 および スコアタイプの表示
 	color: #696969;											/*テキスト色*/
 	text-decoration: none;									/*テキスト装飾無し*/
 	color: #ffffff;											/*フォント*/
-	filter:alpha(opacity=50);								/*半透明*/
-		-moz-opacity: 0.5;									/*同上*/
-		opacity: 0.5;										/*同上*/
+	opacity: 0.5;											/*半透明*/
 	border-radius: 5px;										/*角丸*/
-		-webkit-border-radius: 5px;							/*角丸Safari,Google Chrome用*/
-		-moz-border-radius: 5px;							/*角丸Firefox用*/
 }
 
 
