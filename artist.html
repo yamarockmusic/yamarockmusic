@@ -1,120 +1,148 @@
 <!doctype html>
-	<!-- Facebook OGP -->
-	<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja" dir="ltr" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+	<html lang="ja">
+	
+		<!-- ==========================================
+			ヘッダエリア 開始
+		============================================ -->
+		<head>
+			<meta charset="utf-8">
 
-	<head>
-		<meta charset="utf-8">
+			<!-- タイトル / キーワード設定 -->
+			<title>yamarockmusic バンドスコア｜TAB譜｜楽譜 販売</title>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- スマホ表示を綺麗にする設定 -->
+			<meta name="copyright" content="yamarockmusic">
+			<meta name="description" content="yamarockmusic バンドスコア｜TAB譜｜楽譜 販売">
+			<meta name="keywords" content="ギター,TAB,スコア,初心者">
 
-		<!-- キャッシュ -->
-		<meta http-equiv="Expires" content="86400">
+			<!-- お気に入りアイコン（ファビコン） -->
+			<link rel="icon" href="./favicon.ico"> <!-- ブラウザのタブに表示されるアイコン -->
+			<link rel="apple-touch-icon" href="./images/webclip.png"> <!-- スマホのホーム画面用のアイコン -->
 
-		<!-- タイトル / キーワード -->
-		<title>yamarockmusic バンドスコア｜TAB譜｜楽譜 一覧</title>
-		<meta name="viewport" content="width=device-width">
-		<meta name="copyright" content="yamarockmusic">
-		<meta name="description" content="yamarockmusic バンドスコア｜TAB譜｜楽譜 販売">
-		<meta name="keywords" content="ギター,TAB,無料,スコア,初心者">
+			<!-- OGP（LINEやSNSでシェアされた時の設定） -->
+			<meta property="og:locale" content="ja_JP">
+			<meta property="og:title" content="yamarockmusic [ヤマロック ミュージック]">
+			<meta property="og:type" content="article">
+			<meta property="og:description" content="1曲から購入できる楽譜配信サイト">
+			<meta property="og:url" content="https://yamarockmusic.github.io/yamarockmusic/">
+			<meta property="og:image" content="https://yamarockmusic.github.io/yamarockmusic/images/ogp01.jpg">
 
-		<!-- ファビコン -->
-		<link rel="shortcut icon" href="./favicon.ico">
+			<!-- Twitter・X専用のシェア設定 -->
+			<meta name="twitter:card" content="summary"> <!-- 小さな画像と文字のカード形式で表示 -->
+			<meta name="twitter:site" content="@yamarockmusic">
+	
+			<!-- CSS読み込み -->
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- スマホ表示用設定 (Viewport) -->
+			<link rel="stylesheet" href="./css/style.min.css">
 
-		<!-- ウェブクリップアイコン -->
-		<link rel="apple-touch-icon-precomposed" href="./images/webclip.png" />
+			<!-- jQuery読み込み -->
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 
-		<!-- OGP -->
-		<meta property="og:locale" content="ja_JP">
-		<meta property="og:title" content="yamarockmusic [ヤマロック ミュージック]" />
-		<meta property="og:type" content="article">
-		<meta property="og:description" content="1曲から購入できる楽譜配信サイト" />
-		<meta property="og:url" content="http://yamarockmusic.g1.xrea.com/" />
-		<meta property="og:image" content="http://yamarockmusic.g1.xrea.com/images/ogp01.jpg" />
+			<!-- layzr JS *jsフォルダに本体も入っている とりあえずcdnjsから読込 ver2.xx系はうまく動作しない 原因不明 -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/layzr.js/1.4.3/layzr.min.js"></script>
 
-		<!-- twitter OGP -->
-		<meta name="twitter:card" content="summary" />
-		<meta name="twitter:site" content="@yamarockmusic" />
+				<!-- Smooth Scroll JS（画面のスムーズスクロール） -->
+			<script src="./js/smoothscroll.js"></script>
+	
+			<!-- pagetop JS（トップへ戻るボタンの制御） -->
+			<script src="./js/pagetop.js"></script>
+	
+			<!-- loadlist JS（サイドバーのアーティスト一覧自動読み込み） -->
+			<script>
+				$(function(){
+					$('#loadlist').load('./artist.html #artlist');
+				});
+			</script>
 
-		<!-- Facebook専用OGP -->
-		<meta property="fb:admins" content="388404441309637">
+			<!-- FAQページ用 折りたたみ JS -->
+			<script>
+				function show(inputData) {
+					var objID=document.getElementById( "layer_" + inputData );
+					var buttonID=document.getElementById( "category_" + inputData );
+					if(objID.className=='close') {
+						objID.style.display='block';
+						objID.className='open';
+					}else{
+						objID.style.display='none';
+						objID.className='close';
+					}
+				}
+			</script>
 
-		<!-- CSS -->
-		<link rel="stylesheet" href="./css/style.min.css">
-		<link href="./css/style-s.min.css" rel="stylesheet" type="text/css" media="only screen and (max-width:731px)">
+		</head>
 
-		<!-- jQuery -->
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+		<!-- ==========================================
+			画面の表示エリア 開始
+		============================================ -->
+		<body>
 
-		<!-- layzr JS *jsフォルダに本体も入っている とりあえずcdnjsから読込 ver2.xx系はうまく動作しない 原因不明 -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/layzr.js/1.4.3/layzr.min.js"></script>
+			<!-- コンテナ開始 -->
+			<div id="container">
 
-		<!-- Smooth Scroll JS -->
-		<script type="text/javascript" src="./js/smoothscroll.js"></script>
+		<!-- ==========================================
+			メインコンテンツ内のヘッダエリア(上部メニュー) 開始
+		============================================ -->
+				<header id="header">
+				
+					<h1>バンドスコア｜TAB譜｜楽譜 ダウンロード配信サイト</h1>
+				
+					<!-- ロゴマーク（クリックするとトップページへ戻るリンク） -->
+					<div id="logo">
+						<a href="./index.html">
+							<img src="./images/logo_600x245.png" width="122" height="50" alt="yamarockmusic ロゴ">
+						</a>
+					</div>
+				
+					<!-- メインのナビゲーションメニュー -->
+					<nav id="menu-box">
+						<ul>
+							<li><a href="./index.html">TOP</a></li>
+							<li id="current"><a href="#">楽譜一覧</a></li> <!-- 現在表示しているページ（楽譜一覧） -->
+							<li><a href="./faq.html">FAQ</a></li>
+							<li><a href="./contact.html">Contact</a></li>
+						</ul>
+					</nav>
+					
+				</header>
+				<!--// ヘッダーエリア終了 -->
 
-		<!-- loadlist JS -->
-		<script type="text/javascript">
-		<!--
-			$(function(){
-				$('#loadlist').load('./artist.html #artlist');
-			}); 
-		-->
-		</script>
-		<!-- //loadlist JS -->
+				<!-- ==========================================
+					パンくずリスト（現在地を示すナビ）
+					※Googleの最新ルール（schema.org）に対応させています
+				========================================== -->
+				<ul id="syncer-brcb">
+					<li itemscope itemtype="https://schema.org/ListItem">
+						<a href="./index.html" itemprop="item">
+							<span itemprop="name">TOP</span>
+						</a>
+						<meta itemprop="position" content="1">
+					</li>
+					<li itemscope itemtype="https://schema.org/ListItem">
+						<a href="#" itemprop="item">
+							<span itemprop="name">楽譜一覧</span>
+						</a>
+						<meta itemprop="position" content="2">
+					</li>
+				</ul>
 
-		<!-- pagetop JS -->
-		<script type="text/javascript" src="./js/pagetop.js"></script>
-
-		<!-- ▼試験運用中 スマホ対策 シングルタップレスポンス -->
-		<!-- 参考 http://www.rainorshine.asia/2011/09/01/post2127.html -->
-		<script src="./js/jquery.tap-1.0.3.js"></script>
-
-		<!-- ▼試験運用中 google analytics -->
-		<meta http-equiv="Content-Script-Type" content="text/javascript">
-		
-	</head>
-
-	<!-- body -->
-	<body>
-
-		<!-- container -->
-		<div id="container">
-
-			<!-- header -->
-			<div id ="header">
-				<h1>バンドスコア｜TAB譜｜楽譜 ダウンロード配信サイト</h1>
-				<div id="logo"><a href="./index.html#"><img src="./images/logo_600x245.png" width="122" height="50" alt=""></a></div>
-				<!-- nav -->
-				<nav id="menu-box">
-					<ul>
-						<li class=""><a href="./index.html">TOP</a></li>
-						<li id="current"><a href="#">楽譜一覧</a></li>
-						<li class=""><a href="./faq.html">FAQ</a></li>
-						<li class=""><a href="./contact.html">Contact</a></li>
-					</ul>
-				</nav>
-			</div>
-			<!--// header -->
-
-			<!-- syncer-brcb -->
-			<ul id="syncer-brcb">
-				<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="./index.html" itemprop="url"><span itemprop="title">TOP</span></a></li>
-				<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="#" itemprop="url"><span itemprop="title">楽譜一覧</span></a></li>
-			</ul>
-
-			<!-- main -->
-			<div id="main">
+			<!-- ==========================================
+				メインコンテンツエリア開始
+			========================================== -->
+				<main id="main">
 
 				<h2><img src="./images/art_001.png" alt=""> 楽譜一覧</h2>
 
 				<!-- boxcontents -->
 				<div class="boxcontents">
-					<!-- middlebox -->
-					<ul class="middlebox">
-
-						<!-- artlist -->
-						<div id="artlist">
+				
+					<!-- artlist -->
+					<div id="artlist">
 							
 							<h3>あ</h3>
+<!-- middlebox -->
+<ul class="middlebox">
 								
 								<li>
+									<!-- アーティスト番号(n=の後の数字)はPiascoreのアーティストページ左側のリストからアーティスト名を選ぶと分かる -->
 									<a href="https://store.piascore.com/search?c=131&p=2374" target="_blank">
 										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/510Mr2oo2wL.jpg" alt="">
 										<span class="artist">藍井エイル</span>
@@ -124,7 +152,7 @@
 								</li>
 
 								<li>
-								<a href="https://store.piascore.com/search?c=131&n=ado" target="_blank">
+								<a href="https://store.piascore.com/search?c=131&p=18219" target="_blank">
 										<img src="./images/loading.png" data-layzr="https://m.media-amazon.com/images/I/61eem1+hH2L.jpg" alt="">
 										<span class="artist">Ado</span>
 										<span class="amount">( 1 )</span><br>
@@ -142,7 +170,7 @@
 								</li>
 
 								<li>
-									<a href="https://store.piascore.com/search?c=131&n=杏里" target="_blank">
+									<a href="https://store.piascore.com/search?c=131&p=91" target="_blank">
 										<img src="./images/loading.png" data-layzr="https://m.media-amazon.com/images/I/81tEFh-4rQL.jpg" alt="">
 										<span class="artist">杏里</span>
 										<span class="amount">( 1 )</span><br>
@@ -230,9 +258,10 @@
 										<span class="explanation"></span>
 									</a>
 								</li>
-							
+
 							<h3>か</h3>
-							
+<!-- middlebox -->
+
 								<li>
 									<a href="https://store.piascore.com/search?c=131&p=2419" target="_blank">
 										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/71zgD7C0f-L.jpg" alt="">
@@ -241,8 +270,9 @@
 										<span class="explanation"></span>
 									</a>
 								</li>
-							
+
 							<h3>さ</h3>
+<!-- middlebox -->
 
 								<li>
 									<a href="https://store.piascore.com/search?c=131&p=2597" target="_blank">
@@ -254,7 +284,7 @@
 								</li>
 								
 								<li>
-									<a href="https://store.piascore.com/search?c=131&n=%E3%82%B5%E3%83%90%E3%82%B7%E3%82%B9%E3%82%BF%E3%83%BC" target="_blank">
+									<a href="https://store.piascore.com/search?c=131&p=26045" target="_blank">
 										<img src="./images/loading.png" data-layzr="https://m.media-amazon.com/images/I/61-1oHw2+QL._AC_SL1126_.jpg" alt="">
 										<span class="artist">サバシスター</span>
 										<span class="amount">( 2 )</span><br>
@@ -307,9 +337,10 @@
 									</a>
 								</li>
 
-							
+
 							<h3>た</h3>
-							
+<!-- middlebox -->
+
 								<li>
 									<a href="https://store.piascore.com/search?c=131&p=2596" target="_blank">
 										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/71u7Nf5WnRL.jpg" alt="">
@@ -372,9 +403,10 @@
 										<span class="explanation"></span>
 									</a>
 								</li>
-							
+
 							<h3>な</h3>
-							
+<!-- middlebox -->
+
 								<li>
 									<a href="https://store.piascore.com/search?c=131&p=2549" target="_blank">
 										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/51R-Bd4V4rL.jpg" alt="">
@@ -410,9 +442,10 @@
 										<span class="explanation"></span>
 									</a>
 								</li>
-							
+
 							<h3>は</h3>
-							
+<!-- middlebox -->
+
 								<li>
 									<a href="https://store.piascore.com/search?c=131&p=1956" target="_blank">
 										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/51D4JC8CV5L.jpg" alt="">
@@ -558,7 +591,8 @@
 								</li>
 
 							<h3>ま</h3>
-							
+<!-- middlebox -->
+
 								<li>
 									<a href="https://store.piascore.com/search?c=131&p=1783" target="_blank">
 										<img src="./images/loading.png" data-layzr="https://images-na.ssl-images-amazon.com/images/I/51xy5w9wdiL.jpg" alt="">
@@ -576,8 +610,9 @@
 										<span class="explanation"></span>
 									</a>
 								</li>
-							
+
 							<h3>や</h3>
+<!-- middlebox -->
 
 								<li>
 									<a href="https://store.piascore.com/search?c=131&p=140" target="_blank">
@@ -607,6 +642,7 @@
 								</li>
 
 							<h3>ら</h3>
+<!-- middlebox -->
 
 								<li>
 									<a href="https://store.piascore.com/search?c=131&p=3127" target="_blank">
@@ -663,6 +699,7 @@
 								</li>
 
 							<h3>わ</h3>
+<!-- middlebox -->
 
 								<li>
 									<a href="https://store.piascore.com/search?c=131&p=5358" target="_blank">
@@ -681,167 +718,131 @@
 										<span class="explanation"></span>
 									</a>
 								</li>
-						
+
+</ul>
+<!-- //middlebox -->
+
 						</div>
 						<!-- //artlist -->
+						
+					</div>
+					<!-- //boxcontents -->
 
-						</ul>
-					<!-- //middlebox -->
-				</div>
-				<!-- //boxcontents -->
-
-				<!-- SNS -->
-				<div id="sns">
-					<p><b>ページを共有</b></p>
-					<a href="https://social-plugins.line.me/lineit/share?url=http://yamarockmusic.g1.xrea.com/">
-						<img src="./images/linebutton_20x20.png" alt="LINEで送る" />
-					</a>
-					<a href="http://twitter.com/share?text=yamarockmusic&url=http://yamarockmusic.g1.xrea.com/" target="_blank">
-						<img src="./images/twitter_color_32px.png" alt="Tweet" />
-					</a>
-				</div>
-				<!-- //SNS -->
+					<!-- ==========================================
+						SNSシェアボタンエリア（LINE・X）
+					========================================== -->
+					<div id="sns">
+						<p><b>ページを共有</b></p>
+						
+						<!-- LINE用シェアボタン -->
+						<a href="https://line.me/R/msg/text/?yamarockmusic%20https%3A%2F%2Fyamarockmusic.github.io%2Fyamarockmusic%2F" target="_blank" rel="noopener noreferrer">
+							<img src="./images/linebutton_20x20.png" alt="LINEで送る">
+						</a>
+						
+						<!-- X（旧Twitter）用シェアボタン -->
+						<a href="https://x.com/intent/tweet?text=yamarockmusic%20-%20バンドスコア%20TAB譜%20楽譜サイト&url=https%3A%2F%2Fyamarockmusic.github.io%2Fyamarockmusic%2F" target="_blank" rel="noopener noreferrer">
+							<img src="./images/twitter_color_32px.png" alt="Xでシェア">
+						</a>
+					</div>
+					<!-- //SNSシェアボタンエリア終了 -->
 				
-				<!-- JAS -->
-				<div id="jas">
-					<p><b>JASRAC許諾番号</b></p>
-					<img src="./images/jasrac-221058400b8360a7944e393747817f10.png" alt="">
-					<!-- <img src="./images/jasrac1.gif" alt=""> -->
-					<!-- <img src="./images/jasrac2.gif" alt=""> -->
-					<span style="font-size:11px;">9013196001Y37019<br></span>
-					<span style="font-size:11px;">9026286001Y38029<br></span>
-					<span style="font-size:11px;">9026286002Y37019<br></span>
-				</div>
-
-				<div id="jas">
-					<p><b>NexTone許諾番号</b></p>
-					<img src="./images/nextone-96984dd07b164ad8b950f9e129d3be3a.png" alt="">
-					<span style="font-size:11px;">ID000003241<br></span>
-					<span style="font-size:11px;">ID000005789<br></span>
-					<span style="font-size:11px;">ID000006472<br></span>
-				</div>
-				<!-- //JAS -->
-
-				<!-- amazon -->
-				<!-- <div class="amazon"> -->
-				<!-- 	<script type="text/javascript">amzn_assoc_ad_type ="responsive_search_widget"; amzn_assoc_tracking_id ="yamarock01-22"; amzn_assoc_marketplace ="amazon"; amzn_assoc_region ="JP"; amzn_assoc_placement =""; amzn_assoc_search_type = "search_widget";amzn_assoc_width ="auto"; amzn_assoc_height ="auto"; amzn_assoc_default_search_category =""; amzn_assoc_default_search_key ="";amzn_assoc_theme ="light"; amzn_assoc_bg_color ="FFFFFF"; </script><script src="//z-fe.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&Marketplace=JP"></script> -->
-				<!-- </div> -->
-				<!-- //amazon -->
-
-			</div>
-			<!-- //main -->
-
-			<!-- side -->
-			<div id="side">
-
-				<h2><img src="./images/art_001.png" alt=""> アーティスト一覧</h2>
-
-				<!-- artistlist -->
-				<div id="artistlist">
-					<ul>
-						<div id="loadlist">
-							<a href="./artist.html">アーティスト一覧の読み込みに失敗しました。<br>
-								JavaScriptが使用できるようブラウザ設定を変更してリロード(再読み込み)してください。<br>
-								または、この文字をクリックしてアーティスト一覧ページへジャンプすることもできます。
-							</a>
+					<!-- ==========================================
+						著作権管理団体（JASRAC / NexTone）許諾番号エリア
+					========================================== -->
+					
+					<!-- JASRAC許諾番号表示 -->
+					<div id="jasrac" class="jas">
+						<p><b>JASRAC許諾番号</b></p>
+						<img src="./images/jasrac-221058400b8360a7944e393747817f10.png" alt="JASRACロゴ">
+						
+						<div style="font-size: 11px; line-height: 1.6;">
+							9013196001Y37019<br>
+							9026286001Y38029<br>
+							9026286002Y37019
 						</div>
-					</ul>
-				</div>
-				<!-- //artistlist -->
+					</div>
+	
+					<!-- NexTone許諾番号表示 -->
+					<div id="nextone" class="jas">
+						<p><b>NexTone許諾番号</b></p>
+						<img src="./images/nextone-96984dd07b164ad8b950f9e129d3be3a.png" alt="NexToneロゴ">
+						
+						<div style="font-size: 11px; line-height: 1.6;">
+							ID000003241<br>
+							ID000005789<br>
+							ID000006472
+						</div>
+					</div>
+					<!-- //著作権管理団体エリア終了 -->
+	
+				</main>
+				<!-- //main（メインコンテンツエリア終了） -->
 
-<!--■				<!-- affiliate -->
-<!--■				<div id="affiliate">
-<!--■					<!-- レコチョク -->
-<!--■					<iframe frameborder="0" allowtransparency="true" height="60" width="234" marginheight="0" scrolling="no" src="http://ad.jp.ap.valuecommerce.com/servlet/htmlbanner?sid=3303004&pid=884180480" marginwidth="0">
-<!--■						<script language="javascript" src="http://ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=3303004&pid=884180480"></script>
-<!--■						<noscript>
-<!--■							<a href="http://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3303004&pid=884180480" target="_blank" >
-<!--■								<img src="./images/loading.png" data-layzr="http://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3303004&pid=884180480" height="60" width="234" border="0">
-<!--■							</a>
-<!--■						</noscript>
-<!--■					</iframe>
-<!--■					<!-- ピアス専門店グリーンピアッシング -->
-<!--■					<iframe frameborder="0" allowtransparency="true" height="60" width="234" marginheight="0" scrolling="no" src="http://ad.jp.ap.valuecommerce.com/servlet/htmlbanner?sid=3303004&pid=884185597" marginwidth="0">
-<!--■						<script language="javascript" src="http://ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=3303004&pid=884185597"></script>
-<!--■						<noscript>
-<!--■							<a href="http://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3303004&pid=884185597" target="_blank" >
-<!--■								<img src="./images/loading.png" data-layzr="http://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3303004&pid=884185597" height="60" width="234" border="0">
-<!--■							</a>
-<!--■						</noscript>
-<!--■					</iframe>
-<!--■					<!-- タワレコ -->
-<!--■					<iframe frameborder="0" allowtransparency="true" height="60" width="234" marginheight="0" scrolling="no" src="http://ad.jp.ap.valuecommerce.com/servlet/htmlbanner?sid=3303004&pid=884185615" marginwidth="0">
-<!--■						<script language="javascript" src="http://ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=3303004&pid=884185615"></script>
-<!--■						<noscript>
-<!--■							<a href="http://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3303004&pid=884185615" target="_blank" >
-<!--■								<img src="http://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3303004&pid=884185615" height="60" width="234" border="0">
-<!--■							</a>
-<!--■						</noscript>
-<!--■					</iframe>
-<!--■					<!-- グッドアピール -->
-<!--■					<a href="http://px.a8.net/svt/ejp?a8mat=2HHJ20+45FTMA+2Z0I+NW4I9" target="_blank">
-<!--■						<img border="0" width="234" height="60" alt="" src="./images/loading.png" data-layzr="http://www24.a8.net/svt/bgt?aid=150303672251&wid=001&eno=01&mid=s00000013869004013000&mc=1">
-<!--■					</a>
-<!--■					<img border="0" width="1" height="1" src="http://www19.a8.net/0.gif?a8mat=2HHJ20+45FTMA+2Z0I+NW4I9" alt="">
-<!--■				</div>
-<!--■				<!-- //affiliate -->
+				<!-- ==========================================
+					サイドバーエリア（画面の横に表示される補足領域）
+				========================================== -->
+				<aside id="side">
 
-			</div>
-			<!-- //side -->
+					<h2><img src="./images/art_001.png" alt="アーティストアイコン"> アーティスト一覧</h2>
 
-			<!-- pagetop -->
-			<p id="pagetop"><a href="#wrap">TOP ▲</a></p>
-			<!-- //pagetop -->
+					<!-- アーティストリストの読み込みエリア -->
+					<div id="artistlist">
+						<ul>
+							<li id="loadlist">
+								<a href="./artist.html">
+									アーティスト一覧の読み込みに失敗しました。<br>
+									JavaScriptが使用できるようブラウザ設定を変更してリロード(再読み込み)してください。<br>
+									または、この文字をクリックしてアーティスト一覧ページへジャンプすることもできます。
+								</a>
+							</li>
+						</ul>
+					</div>
+		
+				</aside>
+				<!-- //side（サイドバーエリア終了） -->
 
-			<!-- footer -->
-			<footer>
-				<small>Copyright&copy; 2015　<a href="./index.html"><b>yamarock music</b></a>　All Rights Reserved.</small>
-			</footer>
-			<!-- //footer -->
+				<!-- ページトップへ戻るボタン -->
+				<p id="pagetop"><a href="#">TOP ▲</a></p>
+
+				<!-- フッターエリア（著作権表記） -->
+				<footer>
+					<small>Copyright &copy; 2015 <a href="./index.html"><b>yamarock music</b></a> All Rights Reserved.</small>
+				</footer>
 			
-		</div>
-		<!-- //container -->
+			</div>
+			<!-- //container（外枠の箱終了） -->
 
 <!-- ******************************************* -->
 
-		<!-- IMGリンク切れ対策 JS -->
-		<script type="text/javascript">
-		<!-- 
+		<!-- ==========================================
+			画像リンク切れ対策プログラム（jQuery）
+			リンク切れ時にはNo Image画像を入れる
+		========================================== -->
+		<script>
 			$(function () {
-				$('img').error(function(){
-					$(this).attr({src:'./images/noimg_001.jpg',alt:'No Image'});
+				$('img').on('error', function(){
+					$(this).attr({
+						src: './images/noimg_001.jpg',
+						alt: 'No Image'
+					});
 				});
 			});
-		 //-->
 		</script>
-		<!-- //IMGリンク切れ対策 JS -->
+		<!-- //画像リンク切れ対策終了 -->
 
 		<!-- layzr JS -->
-		<script type="text/javascript">var layzr = new Layzr();</script>
+		<script>var layzr = new Layzr();</script>
 
-		<!-- java noscript -->
+		<!-- ==========================================
+			JavaScriptが無効な環境への案内メッセージ
+		========================================== -->
 		<noscript>
 			<p>全てのコンテンツをご覧いただくには、JavaScriptが使用できるようブラウザ設定を変更してください</p>
 		</noscript>
-		<!-- //java noscript -->
-
-		<!-- google analytics ▼試験運用中▼ -->
-		<script>
-		<!--
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-		ga('create', 'UA-57858395-1', 'auto');
-		ga('send', 'pageview');
-		-->
-		</script>
-		<!-- google analytics ▲試験運用中▲ -->
+		<!-- //noscript終了 -->
 
 	</body>
 	<!-- //body -->
 
 </html>
 <!-- //html -->
-
