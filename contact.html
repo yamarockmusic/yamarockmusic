@@ -48,8 +48,10 @@
 	
 			<!-- loadlist JS（サイドバーのアーティスト一覧自動読み込み） -->
 			<script>
-				$(function(){
-					$('#loadlist').load('./artist.html #artlist');
+				$(function () {
+				    $('#loadlist').load('./artist.html #artlist', function () {
+				        $('#artistlist .middlebox').removeClass('middlebox');
+				    });
 				});
 			</script>
 
